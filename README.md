@@ -1,14 +1,34 @@
-# HR1 Education & Training Hub
+# HR1 Education Hub V2 — Career Readiness Atlas Prototype V1
 
-Website tĩnh đã sẵn sàng để triển khai bằng GitHub Pages.
+## Mục đích
 
-## Triển khai
+Prototype HTML tĩnh để review visual direction trước khi chuyển sang production stack.
 
-1. Tải toàn bộ nội dung thư mục này lên nhánh `main` của repository.
-2. Vào **Settings → Pages**.
-3. Tại **Build and deployment**, chọn **Deploy from a branch**.
-4. Chọn nhánh **main**, thư mục **/(root)**, rồi bấm **Save**.
+## Cách xem
 
-Địa chỉ dự kiến:
+- Mở `index.html` trực tiếp.
+- Hoặc kéo toàn bộ thư mục/ZIP lên Netlify Drop.
+- Không cần chạy build.
 
-https://lamduc1123.github.io/hr1-education-hub/
+## Điểm mới so với template Learning Atlas
+
+- Đồng bộ màu HR1 nhưng không chỉ đổi màu.
+- Career Journey motion trong Hero.
+- HR1 Career Index numbering.
+- Capability Map thay cho 4 card thông thường.
+- Custom line-icon system.
+- Solutions theo stacked chapter, không phải card grid.
+- HUTECH Documentary Case Study với journey line và video lazy-load.
+- Progressive disclosure để giữ toàn bộ Master Content.
+- Media thực tế được tối ưu WebP.
+- Reduced-motion và responsive mobile.
+
+## Media
+
+Ảnh hiện tại là media có sẵn để dựng khung. Sau vòng review, thay bằng bộ ảnh/video được chọn lọc chính thức.
+
+Video HUTECH được lazy-load từ YouTube, không đóng gói file video nặng.
+
+## Form
+
+Form hiện là UI demo. Chưa kết nối Google Sheet/email.
