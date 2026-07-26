@@ -1,0 +1,152 @@
+[
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 823,
+    "sha256": "8557787e4bf48a848a598db2766256eaf321965a450c235b91b71b4e7e7c1389"
+  },
+  {
+    "path": "DESIGN_SYSTEM.md",
+    "bytes": 969,
+    "sha256": "be8123f10dec70b87d5cd9da4cc9997d95cebc9d15955840b62e7736e6bffb29"
+  },
+  {
+    "path": "README.md",
+    "bytes": 1160,
+    "sha256": "b6de4ba6efdfe84067f0563fc3691cc92bd694dedfccff3e8a6abbe18895fe88"
+  },
+  {
+    "path": "_headers",
+    "bytes": 246,
+    "sha256": "bee89f38d83bd327f2e61c1ae96caef8b9c288b51064940dae17cc7717f4f8c8"
+  },
+  {
+    "path": "assets/css/styles.css",
+    "bytes": 26307,
+    "sha256": "6d394573f14655f5c63f07592f68a27e607fb94860b512e638c07b942d86d205"
+  },
+  {
+    "path": "assets/icons/ai-network.svg",
+    "bytes": 662,
+    "sha256": "83ea4e8c2db19724e132bb417b19e848dff88617e51ea4b979697268571ac32d"
+  },
+  {
+    "path": "assets/icons/bridge.svg",
+    "bytes": 368,
+    "sha256": "fd88b232877b919a657066e0fa08c860abb3bdfd82781918aaf32b1ab45c8579"
+  },
+  {
+    "path": "assets/icons/compass.svg",
+    "bytes": 336,
+    "sha256": "2b560210019626e0cb37f270f5d92e4ccc2309d954691fc0bebec611d1b0c2fd"
+  },
+  {
+    "path": "assets/icons/cv.svg",
+    "bytes": 404,
+    "sha256": "72adf4929cfe023379c6e16abdf933f7cb51311668ae0804db9c94f1a69a3a44"
+  },
+  {
+    "path": "assets/icons/interview.svg",
+    "bytes": 425,
+    "sha256": "e1e23a75b69ca1f3a4b7d0eb5fa0f9161c9f151e98cc7607b75e0bc86adb1603"
+  },
+  {
+    "path": "assets/icons/partnership.svg",
+    "bytes": 359,
+    "sha256": "430157d9a65017af9c8db43b1398df60f4504b4c7e8d5f96c78a24fb3b123cd4"
+  },
+  {
+    "path": "assets/icons/recruitment.svg",
+    "bytes": 401,
+    "sha256": "bccc4ff9542be67271d62f947beb8344a7328df4cad124808b1ddbad2df4037e"
+  },
+  {
+    "path": "assets/icons/workplace.svg",
+    "bytes": 320,
+    "sha256": "fb06979b142e45c9cce2cb907d5fef2fa36b0b843e89f8134161133ccfbcadc2"
+  },
+  {
+    "path": "assets/images/hero-activity-900.webp",
+    "bytes": 49302,
+    "sha256": "0ac3b1c49b81e9f90a29d6409e7d2bd4f72f7e276b8760ddaabfff7a8b4301c3"
+  },
+  {
+    "path": "assets/images/hero-activity.webp",
+    "bytes": 132544,
+    "sha256": "0cf03be6e2b0749a164804d23d6e6008840c6152d1b5ea37f417602a9ac500b9"
+  },
+  {
+    "path": "assets/images/hr1jobs.png",
+    "bytes": 23435,
+    "sha256": "351780a50d2ab1dcdc1c271f845ec42e0d8792bc443c201ca11b7161c7acc820"
+  },
+  {
+    "path": "assets/images/hr1tech.png",
+    "bytes": 10138,
+    "sha256": "cb80b12aaed6e91ebe0f349f0b2dba14eac4a047ae7e8ac764570c733abb9790"
+  },
+  {
+    "path": "assets/images/hr1vietnam.png",
+    "bytes": 33937,
+    "sha256": "3b091fd75d6e023dd9e01b0303981c3cacbbc9c6155e904806985c6e1b40b88f"
+  },
+  {
+    "path": "assets/images/hutech-case-900.webp",
+    "bytes": 36184,
+    "sha256": "7daeaf83e4c1eb46ce20ad1f7bc911b9b418520f36161fa244f1fd897e28c764"
+  },
+  {
+    "path": "assets/images/hutech-case.webp",
+    "bytes": 89770,
+    "sha256": "9d87b01ce47194e42b9b36907235a963013a0a0114490c8e384fa68f0090c7e1"
+  },
+  {
+    "path": "assets/images/student-voices-900.webp",
+    "bytes": 35274,
+    "sha256": "c78628b023e7eba18f833be38574cb2275222cbcf1832bb078afc0fe85929583"
+  },
+  {
+    "path": "assets/images/student-voices.webp",
+    "bytes": 107744,
+    "sha256": "804c6c8412f59ea94ba13805ae6d06fa3112a457277f8602cfa56b1a4894f822"
+  },
+  {
+    "path": "assets/images/training-practice-900.webp",
+    "bytes": 42876,
+    "sha256": "7a7b13c8aa47917909322948068a8766e7badb9e221d102cdaa5a23b935c4906"
+  },
+  {
+    "path": "assets/images/training-practice.webp",
+    "bytes": 107318,
+    "sha256": "3f8509039f2b1990a68e4fd7692190d0f3dc268cf32c93a491ca7436f4605d64"
+  },
+  {
+    "path": "assets/images/workshop-scene-900.webp",
+    "bytes": 64200,
+    "sha256": "45d86b9456daa3e5720398446a4c38ca4672a88513241ddc2a1db5cc1b73b159"
+  },
+  {
+    "path": "assets/images/workshop-scene.webp",
+    "bytes": 169456,
+    "sha256": "490c2f725c2949b984b5dfda5a7934cb956516eb8cbe9d5f41fd9a180f9011de"
+  },
+  {
+    "path": "assets/js/app.js",
+    "bytes": 4259,
+    "sha256": "0762c211f797c834b6a4b178de7ce7c32db4c2252f1837c5badc745bc3b8fdef"
+  },
+  {
+    "path": "assets/video/README.txt",
+    "bytes": 137,
+    "sha256": "573583116493e6dcfb219b57fa995329cb36480510f08fe50a218c59664fc81e"
+  },
+  {
+    "path": "content/HR1_Education_Partnership_Hub_Master_Content_V1.md",
+    "bytes": 57401,
+    "sha256": "bab11c316b84c9f36d9bfe83dcf15c81b72170ee9a14d5526b1877dfe29a7900"
+  },
+  {
+    "path": "index.html",
+    "bytes": 95241,
+    "sha256": "e0a538466acf77f71d36bdf1d125c018840fb144624d1ab70fa10a0351ec3fc6"
+  }
+]
