@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HR1Vietnam x HUTECH — Cổng Cấp & Tra Cứu Chứng Nhận Company Tour.">
+    <title>HR1Vietnam x HUTECH — Cổng Cấp & Tra Cứu Chứng Nhận Company Tour</title>
+    <!-- Google Fonts: Be Vietnam Pro & Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External Libraries for PDF/PNG/QR & SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Top Running Ribbon Bar -->
+    <div class="site-ribbon">
+        <div class="shell ribbon-inner">
+            <span>HR1VIETNAM × HUTECH PARTNERSHIP</span>
+            <span>COMPANY TOUR CERTIFICATION × PROFESSIONAL DEVELOPMENT</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+        <div class="shell header-inner">
+            <a class="brand" href="../index.html" id="btn-brand-home" title="Quay lại trang chủ Education Hub">
+                <img src="../assets/images/hr1vietnam.png" alt="HR1Vietnam Logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <span class="brand-title">HR1VIETNAM</span>
+                    <span class="brand-subtitle">Education Hub</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" aria-label="Điều hướng chính">
+                <button class="nav-link active" data-target="tab-lookup">Tra Cứu Chứng Nhận</button>
+                <button class="nav-link" data-target="tab-verify">Xác Minh QR</button>
+                <button class="nav-link" data-target="tab-admin">Quản Trị HR1</button>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://www.hutech.edu.vn" target="_blank" class="hutech-logo-link" title="Truy cập Đại học HUTECH">
+                    <img src="assets/images/hutechlogo.png" alt="HUTECH Logo" class="header-hutech-logo">
+                </a>
+                <div class="partner-text">
+                    <span class="partner-title">Education</span>
+                    <span class="partner-subtitle">Partner</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="main-content shell">
+
+        <!-- TAB 1: TRA CỨU CHỨNG NHẬN (STUDENT LOOKUP ONLY) -->
+        <section id="tab-lookup" class="tab-pane active">
+            <!-- Hero Banner Section -->
+            <div class="hero-card">
+                <div class="hero-rail"><span>STUDENT → CANDIDATE</span><i></i><span>HR1 • 2026</span></div>
+                <div class="hero-content-box">
+                    <span class="micro-label">HR1Vietnam Education Partnership</span>
+                    <h1 class="hero-title">
+                        <span>Tra Cứu Chứng Nhận</span>
+                        <em>Company Tour HUTECH</em>
+                    </h1>
+                    <p class="hero-desc">Nhập Mã số sinh viên (MSSV) của bạn để tra cứu, tải về Chứng nhận hoàn thành tập huấn chuyên môn nhân sự & tuyển dụng thực tế.</p>
+
+                    <!-- Search Form Box -->
+                    <div class="search-box">
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-id-card input-icon"></i>
+                            <input type="text" id="input-mssv" placeholder="Nhập MSSV của bạn (VD: 25808500020)..." autocomplete="off">
+                            <button id="btn-search" class="button primary">
+                                Tra Cứu Ngay <span>↗</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lookup Result Area -->
+            <div id="search-result-area" class="result-area hidden">
+                <!-- Success Alert -->
+                <div id="status-alert" class="alert alert-success hidden">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Xác thực thành công!</strong>
+                        <span>Thông tin của bạn trùng khớp với danh sách điểm danh Company Tour chính thức tại HR1Vietnam.</span>
+                    </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="status-alert-error" class="alert alert-danger hidden">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div>
+                        <strong>Không tìm thấy kết quả!</strong>
+                        <span>Không tìm thấy MSSV này trong danh sách tham gia. Vui lòng kiểm tra lại MSSV hoặc liên hệ Văn phòng HR1Vietnam để được hỗ trợ.</span>
+                    </div>
+                </div>
+
+                <!-- Found Content Grid -->
+                <div id="student-detail-container" class="detail-grid hidden">
+                    <!-- Left: Metadata & Download Panel -->
+                    <div class="student-info-card">
+                        <div class="card-header">
+                            <h3>Thông Tin Sinh Viên</h3>
+                            <span class="badge-verified">Đã Xác Minh</span>
+                        </div>
+
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="label">Họ và tên:</span>
+                                <span class="value" id="res-name">---</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Mã số sinh viên:</span>
+                                <span class="value highlight" id="res-mssv">---</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Lớp sinh hoạt:</span>
+                                <span class="value" id="res-class">---</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Khoa / Viện:</span>
+                                <span class="value" id="res-faculty">---</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Chuyên đề học tập:</span>
+                                <span class="value" id="res-topic">Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Ngày tham gia Tour:</span>
+                                <span class="value" id="res-date">---</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Mã xác thực Certificate:</span>
+                                <span class="value code" id="res-cert-id">HR1-HT-2026-XXXX</span>
+                            </div>
+                        </div>
+
+                        <div class="action-panel">
+                            <h4>Tải & Chia Sẻ Chứng Nhận</h4>
+                            <div class="button-group">
+                                <button id="btn-download-pdf" class="btn-action btn-pdf">
+                                    <i class="fa-solid fa-file-pdf"></i> Tải PDF (Chuẩn Hồ Sơ / CV)
+                                </button>
+                                <button id="btn-download-png" class="btn-action btn-png">
+                                    <i class="fa-solid fa-image"></i> Tải Ảnh PNG (Đăng Mạng Xã Hội)
+                                </button>
+                                <button id="btn-share-linkedin" class="btn-action btn-linkedin">
+                                    <i class="fa-brands fa-linkedin"></i> Chia Sẻ LinkedIn
+                                </button>
+                            </div>
+                            <p class="hint-text"><i class="fa-solid fa-shield-halved"></i> Chứng nhận cấp bởi HR1Vietnam tích hợp mã QR xác thực trực tuyến toàn cầu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Certificate Editorial Preview Area -->
+                    <div class="certificate-preview-card">
+                        <div class="preview-toolbar">
+                            <span>Bản xem trước Chứng nhận (Live Preview)</span>
+                            <button id="btn-toggle-fullscreen" class="btn-small">Phóng to</button>
+                        </div>
+
+                        <div class="certificate-wrapper-scroll">
+                            <!-- Certificate Template Box (Editorial warm paper style) -->
+                            <div id="certificate-template" class="certificate-canvas-box">
+                                <div class="cert-border-outer">
+                                    <div class="cert-border-inner">
+                                        <!-- Header Logos & Titles -->
+                                        <div class="cert-header">
+                                            <div class="cert-brand">
+                                                <img src="assets/images/hr1logo.png" alt="HR1Vietnam Logo" class="cert-logo-img">
+                                            </div>
+                                            <div class="cert-partner-logo">
+                                                <span class="cert-partner-label">EDUCATION PARTNERSHIP</span>
+                                                <img src="assets/images/hutechlogo.png" alt="HUTECH Logo" class="cert-hutech-img">
+                                            </div>
+                                        </div>
+
+                                        <!-- Certificate Main Title -->
+                                        <div class="cert-body">
+                                            <h2 class="cert-main-title">CHỨNG NHẬN HOÀN THÀNH</h2>
+                                            <p class="cert-subtitle">CERTIFICATE OF COMPLETION</p>
+                                            <div class="cert-divider"></div>
+
+                                            <p class="cert-present-text">Trân trọng trao tặng chứng nhận này cho Sinh viên:</p>
+
+                                            <h3 id="cert-student-name" class="cert-student-name">NGUYỄN VĂN AN</h3>
+
+                                            <div class="cert-meta-row">
+                                                <span>MSSV: <strong id="cert-student-mssv">2180601234</strong></span>
+                                                <span class="dot">•</span>
+                                                <span>Lớp: <strong id="cert-student-class">21DQT01</strong></span>
+                                                <span class="dot">•</span>
+                                                <span>Ngày tham dự: <strong id="cert-student-date-meta">15/03/2026</strong></span>
+                                                <span style="display: none;"><strong id="cert-student-faculty"></strong></span>
+                                            </div>
+
+                                            <p class="cert-achievement-desc">
+                                                Đã hoàn thành xuất sắc chương trình tham quan doanh nghiệp và tập huấn chuyên đề:<br>
+                                                <strong id="cert-topic-title">"Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp"</strong>
+                                                <span id="cert-tour-date" style="display: none;"></span>
+                                            </p>
+                                        </div>
+
+                                        <!-- Certificate Footer & Signatures -->
+                                        <div class="cert-footer">
+                                            <div class="cert-qr-block">
+                                                <div id="cert-qr-code" class="qr-code-box"></div>
+                                                <span class="qr-label">Quét mã tra cứu ID:<br><strong id="cert-qr-id">HR1-HT-2026-1001</strong></span>
+                                            </div>
+
+                                            <div class="cert-signatures">
+                                                <!-- Left Column: Big Seal replacing HUTECH Representative -->
+                                                <div class="sig-col-seal">
+                                                    <div class="seal-circle">
+                                                        <i class="fa-solid fa-award"></i>
+                                                        <span>HR1VIETNAM</span>
+                                                        <small>OFFICIAL</small>
+                                                    </div>
+                                                </div>
+                                                <!-- Right Column: HR1 Representative -->
+                                                <div class="sig-col">
+                                                    <p class="sig-role">ĐẠI DIỆN HR1VIETNAM HOLDINGS</p>
+                                                    <div class="sig-space">
+                                                        <span class="sig-font">Director</span>
+                                                    </div>
+                                                    <p class="sig-name" id="cert-hr-rep">Ông Võ Văn Cương</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: XÁC MINH MÃ QR / ID (PUBLIC VERIFICATION) -->
+        <section id="tab-verify" class="tab-pane hidden">
+            <div class="verify-card">
+                <div class="card-header text-center">
+                    <div class="icon-circle"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h2>Xác Minh Chứng Nhận HR1Vietnam</h2>
+                    <p>Nhập Mã Chứng nhận (Ví dụ: <code>HR1-HT-2026-1001</code>) hoặc Quét mã QR trên bằng để kiểm tra dữ liệu gốc từ hệ thống.</p>
+                </div>
+
+                <div class="verify-form">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-barcode input-icon"></i>
+                        <input type="text" id="input-verify-code" placeholder="Nhập mã chứng nhận (VD: HR1-HT-2026-1001)...">
+                        <button id="btn-verify-now" class="button primary">Kiểm Tra Ngay <span>↗</span></button>
+                    </div>
+                </div>
+
+                <div id="verify-result-box" class="verify-result hidden">
+                    <!-- Dynamic verification result -->
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: PHÂN HỆ QUẢN TRỊ HR (PROTECTED ADMIN PANEL WITH PIN) -->
+        <section id="tab-admin" class="tab-pane hidden">
+            <!-- Pin Auth Box -->
+            <div id="admin-auth-box" class="verify-card text-center" style="max-width: 480px; margin: 40px auto;">
+                <div class="icon-circle"><i class="fa-solid fa-lock"></i></div>
+                <h2>Khu Vực Quản Trị HR1Vietnam</h2>
+                <p>Nhập mã PIN bảo mật dành cho Quản trị viên HR để truy cập trang quản lý cơ sở dữ liệu.</p>
+                <div class="form-group" style="margin-top: 20px;">
+                    <input type="password" id="input-admin-pin" placeholder="Nhập mã PIN bảo mật..." style="text-align: center; font-size: 18px; letter-spacing: 4px;">
+                </div>
+                <button id="btn-auth-admin" class="button primary" style="width: 100%; justify-content: center;">Đăng Nhập Quản Trị <span>↗</span></button>
+                <p id="admin-pin-error" class="hidden" style="color: var(--red); font-size: 13px; margin-top: 10px; font-weight: 600;">Mã PIN không đúng! Vui lòng thử lại.</p>
+            </div>
+
+            <!-- Protected Admin Content -->
+            <div id="admin-content-box" class="admin-grid hidden">
+                <div class="admin-stats-row">
+                    <div class="stat-card">
+                        <div class="stat-icon icon-blue"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="stat-total-students">606</span>
+                            <span class="stat-label">Sinh viên trong hệ thống</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon icon-gold"><i class="fa-solid fa-bus-simple"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="stat-total-tours">4</span>
+                            <span class="stat-label">Đợt Company Tour/Năm</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon icon-green"><i class="fa-solid fa-file-circle-check"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Sẵn sàng cấp tự động</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3>Nạp Danh Sách Điểm Danh Đợt Tour Mới (Excel / Word / CSV)</h3>
+                        <span class="badge-free">Hỗ trợ Excel, Word & CSV</span>
+                    </div>
+
+                    <div class="upload-area" id="drop-zone">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                        <p class="upload-title">Kéo & Thả file Excel, Word (.docx) hoặc .CSV vào đây</p>
+                        <p class="upload-desc">Tự động nhận diện các cột: MSSV, Họ tên, Lớp, Khoa, Ngày tham gia (hỗ trợ đọc bảng trong file Word)</p>
+                        <label for="file-upload" class="button primary" style="margin: 0 auto; display: inline-flex;">Chọn File Từ Máy Tính</label>
+                        <input id="file-upload" type="file" accept=".xlsx, .xls, .csv, .docx" style="display: none;">
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3>Danh Sách Sinh Viên (Bảo Mật HR Admin)</h3>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <button id="btn-toggle-add-modal" class="button primary btn-sm">Thêm Thủ Công 1 Sinh Viên <span>↗</span></button>
+                            <button id="btn-export-database" class="button secondary btn-sm"><i class="fa-solid fa-download"></i> Xuất File CSDL (students_data.js)</button>
+                            <button id="btn-clear-database" class="button danger btn-sm" style="background: #e11d48; color: white; border: none; font-size: 11px; padding: 6px 12px; cursor: pointer; font-weight: 800;"><i class="fa-solid fa-trash-can"></i> Xóa Sạch CSDL Phiên Này</button>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table" id="table-students">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>MSSV</th>
+                                    <th>Họ và Tên</th>
+                                    <th>Lớp</th>
+                                    <th>Khoa</th>
+                                    <th>Ngày Tour</th>
+                                    <th>Mã Certificate</th>
+                                    <th>Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-students-body">
+                                <!-- Injected dynamically by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="shell footer-grid">
+            <div>
+                <a href="../index.html" class="footer-logo-link" title="Quay lại trang chủ Education Hub">
+                    <img src="../assets/images/hr1vietnam.png" alt="HR1Vietnam Logo" class="footer-logo-img">
+                </a>
+                <p style="margin-top: 14px; max-width: 360px;">Đơn vị cung cấp giải pháp nhân sự, tuyển dụng và tư vấn đào tạo. Đồng hành cùng thế hệ trẻ sẵn sàng nghề nghiệp trong thời đại mới.</p>
+            </div>
+            <div>
+                <h4>Hệ Sinh Thái</h4>
+                <p><a href="https://hr1vietnam.com/vi" target="_blank">• HR1Vietnam Holdings</a></p>
+                <p><a href="https://hr1jobs.com" target="_blank">• HR1Jobs - Trang tuyển dụng đa ngành nghề</a></p>
+                <p><a href="https://hr1tech.com" target="_blank">• HR1Tech - Trang tuyển dụng ngành CNTT</a></p>
+            </div>
+            <div>
+                <h4>Liên Kết Đối Tác</h4>
+                <p><a href="https://www.hutech.edu.vn" target="_blank">• Trường Đại học HUTECH</a></p>
+                <p><a href="https://www.hutech.edu.vn/khoaqtkd" target="_blank">• Khoa Quản trị Kinh doanh HUTECH</a></p>
+                <p>• Ban Hợp tác Doanh nghiệp HUTECH</p>
+            </div>
+        </div>
+        <div class="shell footer-bottom">
+            <span>© 2026 <strong>HR1Vietnam Holdings</strong>. Mọi quyền được bảo lưu.</span>
+            <span>PROFESSIONAL × HUMAN × HUTECH COMPANY TOUR</span>
+        </div>
+    </footer>
+
+    <!-- MODAL: ADD STUDENT MANUALLY -->
+    <div id="modal-add-student" class="modal-backdrop hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Thêm Sinh Viên Tham Gia Tour</h3>
+                <button class="btn-close-modal" data-close="modal-add-student"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-add-student">
+                    <div class="form-group">
+                        <label>Mã Số Sinh Viên (MSSV) *</label>
+                        <input type="text" id="add-mssv" placeholder="VD: 25808500020" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Họ và Tên Sinh Viên *</label>
+                        <input type="text" id="add-name" placeholder="VD: Trần Duy Anh" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Lớp *</label>
+                            <input type="text" id="add-class" placeholder="VD: 25DLQA3" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Khoa / Viện *</label>
+                            <input type="text" id="add-faculty" placeholder="VD: Quản trị & Du lịch HUTECH" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày Tham Gia Tour *</label>
+                        <input type="date" id="add-date" value="2026-03-13" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" data-close="modal-add-student">Hủy</button>
+                        <button type="submit" class="button primary">Lưu Sinh Viên</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: LINKEDIN SHARE PREVIEW -->
+    <div id="modal-linkedin" class="modal-backdrop hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Chia Sẻ Lên LinkedIn</h3>
+                <button class="btn-close-modal" data-close="modal-linkedin"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Nội dung mẫu được thiết kế để đăng kèm ảnh Certificate lên LinkedIn nhằm xây dựng thương hiệu cá nhân:</p>
+                <div class="linkedin-copy-box">
+                    <textarea id="linkedin-text" rows="6" readonly></textarea>
+                    <button id="btn-copy-linkedin" class="btn-secondary"><i class="fa-solid fa-copy"></i> Sao Chép Nội Dung</button>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" data-close="modal-linkedin">Đóng</button>
+                    <a id="link-open-linkedin" href="https://www.linkedin.com" target="_blank" class="button primary">
+                        Mở LinkedIn Đăng Bài <span>↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="students_data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
