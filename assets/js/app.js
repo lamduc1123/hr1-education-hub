@@ -48,6 +48,16 @@ $$('.voice-tab').forEach(btn => {
     $$('.voice-panel').forEach(x => x.classList.remove('active'));
     btn.classList.add('active');
     $(`.voice-panel[data-voice="${btn.dataset.voice}"]`)?.classList.add('active');
+    
+    // Đổi hình ảnh testimonial tương ứng
+    const voiceImg = $('#testimonial-img');
+    if (voiceImg) {
+      if (btn.dataset.voice === 'student') {
+        voiceImg.src = 'assets/images/student-voices.webp';
+      } else {
+        voiceImg.src = 'assets/images/lecturer-voices.webp';
+      }
+    }
   });
 });
 
