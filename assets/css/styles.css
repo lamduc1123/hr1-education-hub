@@ -406,4 +406,58 @@ button{color:inherit}
   justify-content: center;
 }
 
+/* OPTIMIZE DESKTOP TYPOGRAPHY AND READABILITY */
+@media (min-width: 761px) {
+  .hero-intro {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .gap-sticky p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .editorial-row p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .capability-copy p {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .capability-node p {
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .chapter-content p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .track-panel p,
+  .track-panel li {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .program-proof-content p {
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+  .case-side p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .case-card ul {
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+  .process-step p {
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+  .case-cta-box p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+
 
