@@ -33,6 +33,28 @@ if(timeline){
   timelineObserver.observe(timeline);
 }
 
+const caseGallery = $('#case-gallery');
+const galleryPrev = $('.gallery-prev');
+const galleryNext = $('.gallery-next');
+if(caseGallery && galleryPrev && galleryNext){
+  const updateGalleryButtons = () => {
+    const maxScroll = caseGallery.scrollWidth - caseGallery.clientWidth;
+    galleryPrev.disabled = caseGallery.scrollLeft <= 2;
+    galleryNext.disabled = caseGallery.scrollLeft >= maxScroll - 2;
+  };
+  const scrollGallery = direction => {
+    const card = $('figure', caseGallery);
+    const gap = 12;
+    const distance = card ? card.getBoundingClientRect().width + gap : caseGallery.clientWidth;
+    caseGallery.scrollBy({left: direction * distance, behavior:'smooth'});
+  };
+  galleryPrev.addEventListener('click', () => scrollGallery(-1));
+  galleryNext.addEventListener('click', () => scrollGallery(1));
+  caseGallery.addEventListener('scroll', updateGalleryButtons, {passive:true});
+  addEventListener('resize', updateGalleryButtons);
+  updateGalleryButtons();
+}
+
 $$('.track-tab').forEach(btn => {
   btn.addEventListener('click', () => {
     $$('.track-tab').forEach(x => x.classList.remove('active'));
