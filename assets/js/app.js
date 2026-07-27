@@ -88,7 +88,7 @@ $$('a[href^="#"]').forEach(a => a.addEventListener('click', () => {
 }));
 
 // GOOGLE APPS SCRIPT WEB APP URL (Cấu hình Endpoint của bạn tại đây)
-const GOOGLE_SCRIPT_URL = ''; 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxJnr2mpcXbzE9vR8aZU_Mzy0acLpQweNdEGeDjHS9hWnGTOqb9dmja16N4GYhvolKm/exec'; 
 
 const form = $('#partnership-form');
 const successModal = $('#lead-success-modal');
