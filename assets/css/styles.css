@@ -302,6 +302,27 @@ button{color:inherit}
   .documentary-timeline,.process-grid{grid-template-columns:1fr}
   .documentary-step,.process-step{border-right:0;border-bottom:1px solid rgba(255,255,255,.2)}
   .process-step{min-height:auto}.process-step h3{margin-top:18px}
-  .case-film{min-height:430px}.voice-quote{font-size:28px}
+  .case-film{min-height:430px;}.voice-quote{font-size:28px}
   .footer-bottom{flex-direction:column}
 }
+
+.case-cta-box {
+  margin-top: 48px;
+  padding: 42px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.055);
+  text-align: center;
+}
+.case-cta-box h3 {
+  margin: 12px 0 10px;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-style: italic;
+}
+.case-cta-box p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  max-width: 620px;
+  margin: 0 auto 24px;
+}
+
