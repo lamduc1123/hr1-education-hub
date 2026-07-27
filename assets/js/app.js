@@ -87,11 +87,86 @@ $$('a[href^="#"]').forEach(a => a.addEventListener('click', () => {
   }
 }));
 
-const form = $('[data-demo-form]');
+// GOOGLE APPS SCRIPT WEB APP URL (Cấu hình Endpoint của bạn tại đây)
+const GOOGLE_SCRIPT_URL = ''; 
+
+const form = $('#partnership-form');
+const successModal = $('#lead-success-modal');
+
+// Hàm đóng/mở success modal
+const showSuccessModal = () => {
+  successModal?.classList.add('open');
+  successModal?.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+};
+const closeSuccessModal = () => {
+  successModal?.classList.remove('open');
+  successModal?.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+
+// Gắn sự kiện đóng success modal
+$('#close-success-modal')?.addEventListener('click', closeSuccessModal);
+$('#btn-success-close-ok')?.addEventListener('click', closeSuccessModal);
+successModal?.addEventListener('click', e => { if (e.target === successModal) closeSuccessModal(); });
+
+// Xử lý gửi Form
 form?.addEventListener('submit', e => {
   e.preventDefault();
-  $('.form-success')?.classList.add('show');
-  form.querySelector('button[type="submit"]').textContent = 'Đã ghi nhận';
+  
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  
+  // Thu thập dữ liệu
+  const formData = {
+    fullname: $('#lead-fullname')?.value || '',
+    organization: $('#lead-org')?.value || '',
+    email: $('#lead-email')?.value || '',
+    phone: $('#lead-phone')?.value || '',
+    interest: $('#lead-interest')?.value || '',
+    studentCount: $('#lead-students')?.value || '',
+    message: $('#lead-message')?.value || ''
+  };
+  
+  // Nếu chưa cấu hình API URL thì chạy chế độ Thử nghiệm (Demo)
+  if (!GOOGLE_SCRIPT_URL) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Đang gửi (Demo)...';
+    
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      showSuccessModal();
+      form.reset();
+    }, 1000);
+    return;
+  }
+  
+  // Trạng thái gửi
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Đang gửi yêu cầu...';
+  
+  // Gửi API đến Google Apps Script
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+    showSuccessModal();
+    form.reset();
+  })
+  .catch(err => {
+    console.error('Error submitting form:', err);
+    alert('Có lỗi xảy ra khi gửi yêu cầu. Vui lòng kiểm tra lại kết nối mạng hoặc liên hệ quản trị viên.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+  });
 });
 
 const countObserver = new IntersectionObserver(entries => {
