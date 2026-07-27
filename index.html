@@ -6,6 +6,7 @@
   <meta name="description" content="HR1Vietnam Education Partnership Hub — Từ Sinh Viên Đến Ứng Viên.">
   <title>HR1Vietnam Education Partnership Hub V2</title>
   <link rel="icon" href="assets/images/hr1vietnam.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -1485,21 +1486,20 @@
             <div class="entry"><img src="assets/icons/partnership.svg" alt=""><strong>Customized Learning Journey</strong></div>
           </div>
         </div>
-        <form class="lead-form" data-demo-form>
+        <form class="lead-form" id="partnership-form">
           <span class="micro-label">PARTNERSHIP ENQUIRY</span>
           <h3>Đăng ký trao đổi chương trình hợp tác</h3>
           <div class="form-grid">
-            <div class="field"><label>Họ và tên</label><input required placeholder="Người liên hệ"></div>
-            <div class="field"><label>Đơn vị công tác</label><input required placeholder="Phòng/Khoa/Trung tâm"></div>
-            <div class="field"><label>Email</label><input type="email" required placeholder="Email nhà trường"></div>
-            <div class="field"><label>Số điện thoại/Zalo</label><input placeholder="Số liên hệ"></div>
-            <div class="field"><label>Hình thức quan tâm</label><select><option>Workshop / Webinar</option><option>Company Tour & Practical Training</option><option>Customized Learning Journey</option><option>Khác</option></select></div>
-            <div class="field"><label>Số lượng sinh viên</label><select><option>Dưới 50</option><option>50–100</option><option>100–300</option><option>Trên 300</option></select></div>
-            <div class="field full"><label>Nội dung cần trao đổi</label><textarea placeholder="Mục tiêu, thời gian dự kiến hoặc nhu cầu đào tạo"></textarea></div>
+            <div class="field"><label>Họ và tên</label><input id="lead-fullname" required placeholder="Người liên hệ"></div>
+            <div class="field"><label>Đơn vị công tác</label><input id="lead-org" required placeholder="Phòng/Khoa/Trung tâm"></div>
+            <div class="field"><label>Email</label><input id="lead-email" type="email" required placeholder="Email nhà trường"></div>
+            <div class="field"><label>Số điện thoại/Zalo</label><input id="lead-phone" placeholder="Số liên hệ"></div>
+            <div class="field"><label>Hình thức quan tâm</label><select id="lead-interest"><option>Workshop / Webinar</option><option>Company Tour & Practical Training</option><option>Customized Learning Journey</option><option>Khác</option></select></div>
+            <div class="field"><label>Số lượng sinh viên</label><select id="lead-students"><option>Dưới 50</option><option>50–100</option><option>100–300</option><option>Trên 300</option></select></div>
+            <div class="field full"><label>Nội dung cần trao đổi</label><textarea id="lead-message" placeholder="Mục tiêu, thời gian dự kiến hoặc nhu cầu đào tạo"></textarea></div>
           </div>
           <div class="form-actions"><button class="button primary" type="submit">Gửi yêu cầu hợp tác →</button><a class="button" href="content/HR1_Education_Partnership_Hub_Master_Content_V1.md" download>Tải Master Content</a></div>
-          <p class="form-note">Form trong prototype là demo giao diện. Tích hợp Google Sheet và email notification sẽ thực hiện ở production phase.</p>
-          <div class="form-success">Cảm ơn Quý Đơn vị. Prototype đã ghi nhận thao tác gửi form.</div>
+          <p class="form-note"><i class="fa-solid fa-circle-check"></i> Form đã được kết nối hệ thống tự động lưu trữ và gửi thông báo trực tuyến.</p>
         </form>
         <details class="master-detail" style="grid-column:1/-1"><summary>Xem toàn bộ nội dung final của section</summary><div class="master-content"><h1>09. Final CTA &amp; Lead Form</h1>
 <h2>Eyebrow</h2>
@@ -1697,6 +1697,20 @@
 
   <div class="video-modal" aria-hidden="true">
     <div class="video-dialog"><button class="video-close" aria-label="Đóng video">×</button><div class="video-frame"></div></div>
+  </div>
+
+  <!-- SUCCESS POPUP MODAL -->
+  <div class="success-modal" id="lead-success-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="close-success-modal" aria-label="Đóng thông báo">×</button>
+      <div class="modal-body text-center">
+        <div class="modal-icon-circle"><i class="fa-solid fa-circle-check"></i></div>
+        <h2 class="modal-title">Gửi thành công!</h2>
+        <p class="modal-desc">Cảm ơn Quý Đơn vị đã gửi yêu cầu hợp tác. Hệ thống đã ghi nhận thông tin đăng ký của bạn và tự động thông báo tới ban quản trị HR1Vietnam.</p>
+        <p class="modal-sub">Chúng tôi sẽ phản hồi qua Email hoặc Số điện thoại/Zalo bạn cung cấp trong vòng 24 giờ làm việc.</p>
+        <button class="button primary" id="btn-success-close-ok">Đồng ý</button>
+      </div>
+    </div>
   </div>
 
   <script src="assets/js/app.js"></script>
