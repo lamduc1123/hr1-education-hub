@@ -326,3 +326,84 @@ button{color:inherit}
   margin: 0 auto 24px;
 }
 
+/* SUCCESS MODAL */
+.success-modal {
+  position: fixed;
+  z-index: 1100;
+  inset: 0;
+  display: none;
+  place-items: center;
+  padding: 24px;
+  background: rgba(16, 24, 42, 0.72);
+  backdrop-filter: blur(8px);
+}
+.success-modal.open {
+  display: grid;
+}
+.success-modal .modal-dialog {
+  position: relative;
+  width: min(540px, 94vw);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 44px 34px;
+  box-shadow: 12px 12px 0px var(--ink);
+}
+.success-modal .modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-size: 21px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s var(--ease);
+}
+.success-modal .modal-close:hover {
+  background: var(--ink);
+  color: #fff;
+}
+.success-modal .text-center {
+  text-align: center;
+}
+.success-modal .modal-icon-circle {
+  width: 68px;
+  height: 68px;
+  background: var(--red-soft);
+  color: var(--red);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  margin: 0 auto 22px;
+}
+.success-modal .modal-title {
+  font-family: var(--serif);
+  font-size: 29px;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.success-modal .modal-desc {
+  font-size: 13px;
+  color: var(--graphite);
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+.success-modal .modal-sub {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+.success-modal button.primary {
+  width: 100%;
+  justify-content: center;
+}
+
+
