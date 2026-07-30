@@ -39,14 +39,17 @@
 * **Thiết kế Navy Box V2:** Khung CTA đổi sang màu xanh biển mực đậm **Ink Navy (`#101828`)**, bo viền màu Đỏ tươi HR1 (`#B11116`), kèm bóng đổ phẳng dày dặn màu đen (`box-shadow: 12px 12px 0 #000;`).
 * **Hiệu ứng Hover:** Khi di chuột, khối CTA sẽ nhấc nhẹ lên trên (`transform: translate(-4px, -4px)`) và bóng đổ dày lên, tạo cảm giác nổi bật và thúc đẩy click cực tốt.
 
-### 1.7. Cập nhật Master Content định dạng PDF
-* **Xuất file PDF Chuyên nghiệp:** Tạo tài liệu Master Content tóm tắt toàn bộ nội dung website định dạng PDF. Tài liệu được thiết kế chỉn chu với trang bìa, hệ thống phông chữ đồng bộ (`Be Vietnam Pro` & `Lora`) và màu sắc thương hiệu đỏ/xanh navy của HR1.
-* **Nút Tải trực tiếp:** Thay thế nút tải file `.md` cũ bằng đường dẫn tải trực tiếp file PDF chuyên nghiệp: `assets/docs/HR1_Education_Hub_Master_Content.pdf`.
+### 1.7. Tích hợp Thư Mời Hợp Tác định dạng PDF
+* **Xuất file PDF Chuyên nghiệp (1 trang duy nhất):** Thiết kế lại Thư mời hợp tác định dạng PDF từ bản docx gốc của bạn. File PDF sử dụng logo chuẩn thương hiệu có màu (`hr1logo-color.png`), áp dụng phông chữ Lora & Be Vietnam Pro của website, đóng khung thẻ liên hệ màu Ink Navy và câu hỏi Hook nổi bật trên nền đỏ nhạt. Tài liệu được dàn đều vừa khít 1 trang A4 duy nhất, có Safezone lề trang `1.5cm` sạch sẽ không chứa ngày giờ hay link URL.
+* **Thay thế nút đăng ký:** Thay đổi tên nút **"Tải Master Content"** thành **"Thư Mời Hợp Tác"** tại form liên hệ ở chân trang, trỏ đường dẫn tải trực tiếp đến file PDF mới: `assets/docs/Thu_Moi_Hop_Tac_HR1Vietnam.pdf`.
 
-### 1.8. Làm gọn giao diện (Xóa Accordion rỗng)
+### 1.8. Sửa lỗi dính chữ/dấu giữa các dòng tiêu đề lớn (QA/QC Line-Height)
+* **Tách giãn khoảng cách dòng:** Căn chỉnh giãn cách dòng (`line-height`) tăng lên **`1.08`** (trước đây là `.94` và `.98`) cho cụm tiêu đề lớn ở phần CTA đăng ký cuối trang (`.cta-copy h2`) và tiêu đề các section (`.section-title`). Sự thay đổi này tạo khoảng trống an toàn tối thiểu 1 point, đảm bảo các nguyên âm, phụ âm có dấu và dấu mũ của tiếng Việt ở dòng dưới không bao giờ bị dính hay đè lên các chữ ở dòng trên.
+
+### 1.9. Làm gọn giao diện (Xóa Accordion rỗng)
 * **Ẩn Accordion phụ:** Ẩn toàn bộ các thanh accordion "Xem toàn bộ nội dung final..." ở cuối mỗi section bằng CSS `display: none !important`. Điều này giúp trang web gọn gàng, giảm thiểu trải nghiệm dư thừa cho người dùng cuối khi chạy production.
 
-### 1.9. Hoàn thiện Footer & Biểu tượng mạng xã hội (Social Icons)
+### 1.10. Hoàn thiện Footer & Biểu tượng mạng xã hội (Social Icons)
 * **Cập nhật Liên kết Hệ sinh thái:** 
   * `HR1Jobs` -> Đổi thành link liên kết đến `https://hr1jobs.com/` (Nền tảng tuyển dụng đa ngành nghề).
   * `HR1Tech` -> Đổi thành link liên kết đến `https://hr1tech.com/` (Nền tảng tuyển dụng ngành CNTT).
@@ -79,7 +82,7 @@
 * **[NEW] [workshop-dhct-01.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-01.webp)** & **[-900.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-01-900.webp)**
 * **[NEW] [workshop-dhct-02.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-02.webp)** & **[-900.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-02-900.webp)**
 * **[NEW] [workshop-dhct-03.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-03.webp)** & **[-900.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-03-900.webp)**
-* **[NEW] [HR1_Education_Hub_Master_Content.pdf](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/docs/HR1_Education_Hub_Master_Content.pdf)**
+* **[NEW] [Thu_Moi_Hop_Tac_HR1Vietnam.pdf](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/docs/Thu_Moi_Hop_Tac_HR1Vietnam.pdf)**
 
 ---
 
