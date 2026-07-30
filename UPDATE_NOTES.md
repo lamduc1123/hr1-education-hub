@@ -9,10 +9,13 @@
 ## 1. Tóm Tắt Các Điểm Cập Nhật Mới
 
 ### 1.1. Điều chỉnh Giao diện Đầu trang (Hero Section)
-* **Khung Play Video (Không đè lên hình):** Đã điều chỉnh chiều rộng (`width: 300px` trên desktop) và định cấu hình hạ hẳn vị trí xuống đáy (`bottom: 0`). Đồng thời nâng khoảng trống phía dưới ảnh bìa `.media-main` lên `150px` (trước đây là `110px`). Nhờ đó, khung phát video nằm hoàn toàn bên dưới ảnh bìa và không đè lên hình chụp nhóm sinh viên nữa.
+* **Khung Play Video Ngang:** Đã tái thiết kế khung phát video `.video-chip` sang dạng nằm ngang, đưa nút Play sang trái và khối chữ sang phải để tạo sự cân đối.
+* **Độ rộng bằng ảnh bìa:** Thay đổi kích thước chiều rộng từ `300px` cố định thành tự động co giãn (`left: 0; right: 18px; width: auto`) giúp chiều rộng của khung khớp khít hoàn hảo với chiều rộng của ảnh bìa phía trên.
+* **Không đè lên hình:** Hạ hẳn vị trí của khung xuống đáy (`bottom: 0`), đồng thời nâng biên dưới của ảnh bìa lên `150px` giúp hai phần tách biệt hoàn toàn, không đè lên hình chụp nhóm sinh viên.
 
 ### 1.2. Tích hợp Video giới thiệu mới tại mục "01. CAREER READINESS GAP"
-* **Tách biệt với khối chữ:** Khung phát video đã được tách hẳn ra thành một khối card riêng biệt nằm bên dưới khối chữ, tạo sự thoáng đãng cho bố cục. Khối chữ được chứa trong `.gap-text-card` riêng biệt và khối video nằm dưới.
+* **Bố cục dọc dạng Card (Tách biệt với khối chữ):** Khung phát video đã được thiết kế thành một Card dọc riêng biệt nằm dưới khối chữ `.gap-text-card`. 
+* **Ảnh thu nhỏ tràn viền lớn hơn:** Đặt chiều rộng ảnh thumbnail là `100%` (aspect-ratio 16/9) tràn viền khít với mép của khối chữ phía trên. Tiêu đề và mô tả được chuyển xuống dưới ảnh thu nhỏ trong vùng đệm thoáng đãng.
 * **Thumbnail gốc từ YouTube:** Hình ảnh đại diện (thumbnail) của video giới thiệu được lấy tự động trực tiếp từ link gốc của YouTube (`https://img.youtube.com/vi/___EZpl2N5c/hqdefault.jpg`) giúp đồng bộ hiển thị chuẩn xác nhất.
 * **Trình phát Video Động (Dynamic Video Modal):** Nâng cấp hàm `openVideo` trong Javascript để tự động lấy ID Video từ thuộc tính `data-video` của từng nút kích hoạt. Giờ đây, trang web sử dụng một Modal chung để phát cả video Vlog trải nghiệm HUTECH (`vOjOEKsJE44`) và video giới thiệu Education Hub mới (`___EZpl2N5c`).
 
