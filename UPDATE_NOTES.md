@@ -1,0 +1,83 @@
+# NHẬT KÝ CẬP NHẬT GIAO DIỆN & NỘI DUNG (RELEASE NOTES)
+**Dự án:** HR1Vietnam Education Partnership Hub
+**Phiên bản cập nhật:** V1.2.0 (Final Revision)
+**Thời gian:** 30/07/2026
+**Tác giả:** Antigravity Pairing Agent
+
+---
+
+## 1. Tóm Tắt Các Điểm Cập Nhật Mới
+
+### 1.1. Điều chỉnh Giao diện Đầu trang (Hero Section)
+* **Khung Play Video:** Đã điều chỉnh thu hẹp chiều rộng (`width: 300px` trên desktop) và hạ thấp vị trí (`bottom: 8px` sát đáy ảnh bìa). Sự thay đổi này giúp card điều hướng nằm gọn gàng ở góc dưới bên phải, giải phóng không gian hiển thị của ảnh nhóm sinh viên HUTECH, tránh che khuất các nhân vật chính bên phải ảnh nền.
+
+### 1.2. Tích hợp Video giới thiệu mới tại mục "01. CAREER READINESS GAP"
+* **Widget Xem Video:** Bổ sung một Card phát video (`.gap-video-card`) có hình ảnh thu nhỏ (thumbnail) thiết kế tinh tế và nút Play màu đỏ HR1 ở cột trái (Sticky Column).
+* **Trình phát Video Động (Dynamic Video Modal):** Nâng cấp hàm `openVideo` trong Javascript để tự động lấy ID Video từ thuộc tính `data-video` của từng nút kích hoạt. Giờ đây, trang web sử dụng một Modal chung để phát cả video Vlog trải nghiệm HUTECH (`vOjOEKsJE44`) và video giới thiệu Education Hub mới (`___EZpl2N5c`).
+
+### 1.3. Chuyển đổi ảnh Flagship Workshop thành Slide cuộn ngang
+* **Slide Gallery trượt:** Tại phần **04. FLAGSHIP WORKSHOP**, ảnh tĩnh đơn đã được đổi sang hệ thống Slide ảnh cuộn ngang tự động bắt điểm (`scroll-snap-type: x mandatory`) gồm 3 ảnh thực tế tại Đại học Công Thương. Có trang bị 2 nút mũi tên trái/phải (`←` và `→`) để hỗ trợ duyệt ảnh mượt mà trên cả Desktop lẫn Mobile.
+* **Tối ưu hóa ảnh WebP:** 3 ảnh gốc đã được cắt cúp theo tỷ lệ 3:2, thu nhỏ kích thước và nén định dạng WebP chất lượng cao (dung lượng nén cực nhẹ ~60KB - 110KB/file) để đảm bảo tốc độ tải trang tối ưu.
+
+### 1.4. Thiết kế lại Cổng Chứng Chỉ (E-Certificate Portal CTA)
+* **Điểm nhấn Tương phản cao:** Loại bỏ hoàn toàn màu nền đỏ đô (tránh cảm giác ngột ngạt và lặp lại màu sắc của section).
+* **Thiết kế Navy Box V2:** Khung CTA đổi sang màu xanh biển mực đậm **Ink Navy (`#101828`)**, bo viền màu Đỏ tươi HR1 (`#B11116`), kèm bóng đổ phẳng dày dặn màu đen (`box-shadow: 12px 12px 0 #000;`).
+* **Hiệu ứng Hover:** Khi di chuột, khối CTA sẽ nhấc nhẹ lên trên (`transform: translate(-4px, -4px)`) và bóng đổ dày lên, tạo cảm giác nổi bật và thúc đẩy click cực tốt.
+
+### 1.5. Cập nhật Master Content định dạng PDF
+* **Xuất file PDF Chuyên nghiệp:** Tạo tài liệu Master Content tóm tắt toàn bộ nội dung website định dạng PDF. Tài liệu được thiết kế chỉn chu với trang bìa, hệ thống phông chữ đồng bộ (`Be Vietnam Pro` & `Lora`) và màu sắc thương hiệu đỏ/xanh navy của HR1.
+* **Nút Tải trực tiếp:** Thay thế nút tải file `.md` cũ bằng đường dẫn tải trực tiếp file PDF chuyên nghiệp: `assets/docs/HR1_Education_Hub_Master_Content.pdf`.
+
+### 1.6. Làm gọn giao diện (Xóa Accordion rỗng)
+* **Ẩn Accordion phụ:** Ẩn toàn bộ các thanh accordion "Xem toàn bộ nội dung final..." ở cuối mỗi section bằng CSS `display: none !important`. Điều này giúp trang web gọn gàng, giảm thiểu trải nghiệm dư thừa cho người dùng cuối khi chạy production.
+
+### 1.7. Hoàn thiện Footer & Biểu tượng mạng xã hội (Social Icons)
+* **Cập nhật Liên kết Hệ sinh thái:** 
+  * `HR1Jobs` -> Đổi thành link liên kết đến `https://hr1jobs.com/` (Nền tảng tuyển dụng đa ngành nghề).
+  * `HR1Tech` -> Đổi thành link liên kết đến `https://hr1tech.com/` (Nền tảng tuyển dụng ngành CNTT).
+* **Bổ sung Social Icons:** Chèn cụm icon ở cột mô tả đầu tiên:
+  * **Facebook:** Link dẫn về Fanpage chính thức.
+  * **LinkedIn:** Link dẫn về trang Company chính thức.
+  * **Zalo:** Bổ sung icon SVG Zalo tối giản thiết kế riêng (nét mảnh mượt mà, đồng bộ ngôn ngữ Feather Icons).
+
+---
+
+## 2. Chi Tiết File Thay Đổi (Technical Changelog)
+
+* **[MODIFY] [index.html](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/index.html)**
+  * Chèn thẻ `.gap-video-card` kèm `data-video="___EZpl2N5c"` tại dòng ~107.
+  * Thay thế `.flagship-image` bằng `.flagship-gallery-wrap` tại dòng ~617.
+  * Đổi liên kết nút tải Master Content sang file `.pdf` tại dòng ~1536.
+  * Cập nhật footer: thay thế text/link của Ecosystem, chèn cụm `.footer-socials` chứa icon FB, LinkedIn và SVG Zalo tại dòng ~1725.
+  * Cập nhật giá trị thuộc tính `data-video="vOjOEKsJE44"` cho toàn bộ các nút phát video Vlog cũ để Modal nhận diện động.
+* **[MODIFY] [styles.css](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/css/styles.css)**
+  * Giảm kích thước và hạ vị trí `.video-chip` (dòng 76).
+  * Ẩn `.master-detail` bằng thuộc tính `display: none!important` (dòng 270).
+  * Thêm flexbox và style hover cho `.process-step`, bổ sung `.process-icon` (dòng 238).
+  * Thiết kế lại `.case-cta-box` nền Ink Navy, viền đỏ, bóng đổ và hover lift-up (dòng 334).
+  * Bổ sung class `.gap-video-card` và các class con liên quan (dòng 487+).
+  * Bổ sung class `.flagship-gallery-wrap`, `.flagship-gallery`, các nút chuyển hình và nhãn đè (dòng 550+).
+  * Bổ sung class `.footer-socials` định dạng màu sắc và hiệu ứng hover (dòng 613+).
+* **[MODIFY] [app.js](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/js/app.js)**
+  * Sửa hàm `openVideo` để đọc động thuộc tính `data-video` của thẻ kích hoạt click (dòng 78).
+  * Bổ sung logic trượt hình bằng nút bấm và quản lý trạng thái disabled của các nút cho gallery `#flagship-gallery` (dòng 55).
+* **[NEW] [workshop-dhct-01.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-01.webp)** & **[-900.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-01-900.webp)**
+* **[NEW] [workshop-dhct-02.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-02.webp)** & **[-900.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-02-900.webp)**
+* **[NEW] [workshop-dhct-03.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-03.webp)** & **[-900.webp](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/images/workshop-dhct-03-900.webp)**
+* **[NEW] [HR1_Education_Hub_Master_Content.pdf](file:///Users/lamduc/.gemini/antigravity/scratch/hr1-education-hub/assets/docs/HR1_Education_Hub_Master_Content.pdf)**
+
+---
+
+## 3. Hướng Dẫn Deploy Lên GitHub (Cho Khách Hàng)
+
+Để cập nhật toàn bộ các chỉnh sửa trên lên trang GitHub chính thức của bạn, bạn có thể thực hiện theo các bước sau trong ứng dụng Terminal hoặc VS Code:
+
+1. **Kiểm tra các commit mới đã tạo ở local:**
+   ```bash
+   git log -n 3
+   ```
+2. **Đẩy toàn bộ thay đổi lên nhánh main trên GitHub:**
+   ```bash
+   git push origin main
+   ```
+   *(Sau khi chạy lệnh trên, hệ thống GitHub Actions sẽ tự động biên dịch và cập nhật lên trang web trực tuyến trong vòng 1-2 phút).*
