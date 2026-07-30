@@ -9,10 +9,11 @@
 ## 1. Tóm Tắt Các Điểm Cập Nhật Mới
 
 ### 1.1. Điều chỉnh Giao diện Đầu trang (Hero Section)
-* **Khung Play Video:** Đã điều chỉnh thu hẹp chiều rộng (`width: 300px` trên desktop) và hạ thấp vị trí (`bottom: 8px` sát đáy ảnh bìa). Sự thay đổi này giúp card điều hướng nằm gọn gàng ở góc dưới bên phải, giải phóng không gian hiển thị của ảnh nhóm sinh viên HUTECH, tránh che khuất các nhân vật chính bên phải ảnh nền.
+* **Khung Play Video (Không đè lên hình):** Đã điều chỉnh chiều rộng (`width: 300px` trên desktop) và định cấu hình hạ hẳn vị trí xuống đáy (`bottom: 0`). Đồng thời nâng khoảng trống phía dưới ảnh bìa `.media-main` lên `150px` (trước đây là `110px`). Nhờ đó, khung phát video nằm hoàn toàn bên dưới ảnh bìa và không đè lên hình chụp nhóm sinh viên nữa.
 
 ### 1.2. Tích hợp Video giới thiệu mới tại mục "01. CAREER READINESS GAP"
-* **Widget Xem Video:** Bổ sung một Card phát video (`.gap-video-card`) có hình ảnh thu nhỏ (thumbnail) thiết kế tinh tế và nút Play màu đỏ HR1 ở cột trái (Sticky Column).
+* **Tách biệt với khối chữ:** Khung phát video đã được tách hẳn ra thành một khối card riêng biệt nằm bên dưới khối chữ, tạo sự thoáng đãng cho bố cục. Khối chữ được chứa trong `.gap-text-card` riêng biệt và khối video nằm dưới.
+* **Thumbnail gốc từ YouTube:** Hình ảnh đại diện (thumbnail) của video giới thiệu được lấy tự động trực tiếp từ link gốc của YouTube (`https://img.youtube.com/vi/___EZpl2N5c/hqdefault.jpg`) giúp đồng bộ hiển thị chuẩn xác nhất.
 * **Trình phát Video Động (Dynamic Video Modal):** Nâng cấp hàm `openVideo` trong Javascript để tự động lấy ID Video từ thuộc tính `data-video` của từng nút kích hoạt. Giờ đây, trang web sử dụng một Modal chung để phát cả video Vlog trải nghiệm HUTECH (`vOjOEKsJE44`) và video giới thiệu Education Hub mới (`___EZpl2N5c`).
 
 ### 1.3. Chuyển đổi ảnh Flagship Workshop thành Slide cuộn ngang
