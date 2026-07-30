@@ -11,31 +11,42 @@
 ### 1.1. Điều chỉnh Giao diện Đầu trang (Hero Section)
 * **Khung Play Video Ngang:** Đã tái thiết kế khung phát video `.video-chip` sang dạng nằm ngang, đưa nút Play sang trái và khối chữ sang phải để tạo sự cân đối.
 * **Độ rộng bằng ảnh bìa:** Thay đổi kích thước chiều rộng từ `300px` cố định thành tự động co giãn (`left: 0; right: 18px; width: auto`) giúp chiều rộng của khung khớp khít hoàn hảo với chiều rộng của ảnh bìa phía trên.
-* **Không đè lên hình:** Hạ hẳn vị trí của khung xuống đáy (`bottom: 0`), đồng thời nâng biên dưới của ảnh bìa lên `150px` giúp hai phần tách biệt hoàn toàn, không đè lên hình chụp nhóm sinh viên.
+* **Sát viền dưới ảnh bìa:** Thay vì nằm ở đáy, khung video được đưa lên vị trí `bottom: 44px` sát dưới viền đỏ bóng đổ của ảnh bìa, tạo liên kết thị giác rõ ràng với ảnh chính.
+* **Hiệu ứng tương tác (Hover Motion):** Bổ sung con trỏ tay (`cursor: pointer`) và hiệu ứng hover nhấc nhẹ (`transform: translate(-4px, -4px)`) cùng bóng đổ dày lên tương tự như các nút bấm chính, gia tăng trải nghiệm click. Toàn bộ bề mặt của khung video giờ đây đều có thể click để phát video Vlog HUTECH.
 
-### 1.2. Tích hợp Video giới thiệu mới tại mục "01. CAREER READINESS GAP"
+### 1.2. Cập nhật Số thứ tự các Section (01 - 07)
+* **Hiệu ứng Fill màu và Motion:** 
+  - **Nền Trắng/Be (01, 03, 04, 06, 07):** Khi rê chuột vào tiêu đề section, số thứ tự (đang ở viền đỏ rỗng) sẽ tự động đổ đầy (**Fill**) màu Đỏ tươi và trượt nhẹ lên trên (`translateY(-4px)`).
+  - **Nền Xanh Đen (02):** Chuyển đổi viền từ đỏ sang trắng (tĩnh), khi rê chuột vào sẽ đổ đầy (**Fill**) màu Trắng và trượt nhẹ lên trên.
+  - **Nền Đỏ (05):** Chuyển đổi viền đỏ chìm sang viền Trắng nổi bật (tĩnh), khi rê chuột vào sẽ đổ đầy (**Fill**) màu Trắng và trượt nhẹ lên trên.
+
+### 1.3. Cập nhật Logo rút gọn HR1Vietnam Holdings (1 hàng)
+* **Bản logo 1 hàng mới:** Thay thế logo cũ (2 dòng chữ) bằng logo 1 hàng ngang mới (`HR1Vietnam-white-optional.png`) chất lượng cao.
+* **Tối ưu hóa tỷ lệ:** Định cấu hình hiển thị đặc quyền `max-width: 240px;` giúp logo hiển thị cân đối và rõ nét, cho chiều cao tương đồng với logo `HR1Jobs` và `HR1Tech` (~26px) mang lại cảm giác bề thế và chuyên nghiệp hơn.
+
+### 1.4. Tích hợp Video giới thiệu mới tại mục "01. CAREER READINESS GAP"
 * **Bố cục dọc dạng Card (Tách biệt với khối chữ):** Khung phát video đã được thiết kế thành một Card dọc riêng biệt nằm dưới khối chữ `.gap-text-card`. 
 * **Ảnh thu nhỏ tràn viền lớn hơn:** Đặt chiều rộng ảnh thumbnail là `100%` (aspect-ratio 16/9) tràn viền khít với mép của khối chữ phía trên. Tiêu đề và mô tả được chuyển xuống dưới ảnh thu nhỏ trong vùng đệm thoáng đãng.
 * **Thumbnail gốc từ YouTube:** Hình ảnh đại diện (thumbnail) của video giới thiệu được lấy tự động trực tiếp từ link gốc của YouTube (`https://img.youtube.com/vi/___EZpl2N5c/hqdefault.jpg`) giúp đồng bộ hiển thị chuẩn xác nhất.
 * **Trình phát Video Động (Dynamic Video Modal):** Nâng cấp hàm `openVideo` trong Javascript để tự động lấy ID Video từ thuộc tính `data-video` của từng nút kích hoạt. Giờ đây, trang web sử dụng một Modal chung để phát cả video Vlog trải nghiệm HUTECH (`vOjOEKsJE44`) và video giới thiệu Education Hub mới (`___EZpl2N5c`).
 
-### 1.3. Chuyển đổi ảnh Flagship Workshop thành Slide cuộn ngang
+### 1.5. Chuyển đổi ảnh Flagship Workshop thành Slide cuộn ngang
 * **Slide Gallery trượt:** Tại phần **04. FLAGSHIP WORKSHOP**, ảnh tĩnh đơn đã được đổi sang hệ thống Slide ảnh cuộn ngang tự động bắt điểm (`scroll-snap-type: x mandatory`) gồm 3 ảnh thực tế tại Đại học Công Thương. Có trang bị 2 nút mũi tên trái/phải (`←` và `→`) để hỗ trợ duyệt ảnh mượt mà trên cả Desktop lẫn Mobile.
 * **Tối ưu hóa ảnh WebP:** 3 ảnh gốc đã được cắt cúp theo tỷ lệ 3:2, thu nhỏ kích thước và nén định dạng WebP chất lượng cao (dung lượng nén cực nhẹ ~60KB - 110KB/file) để đảm bảo tốc độ tải trang tối ưu.
 
-### 1.4. Thiết kế lại Cổng Chứng Chỉ (E-Certificate Portal CTA)
+### 1.6. Thiết kế lại Cổng Chứng Chỉ (E-Certificate Portal CTA)
 * **Điểm nhấn Tương phản cao:** Loại bỏ hoàn toàn màu nền đỏ đô (tránh cảm giác ngột ngạt và lặp lại màu sắc của section).
 * **Thiết kế Navy Box V2:** Khung CTA đổi sang màu xanh biển mực đậm **Ink Navy (`#101828`)**, bo viền màu Đỏ tươi HR1 (`#B11116`), kèm bóng đổ phẳng dày dặn màu đen (`box-shadow: 12px 12px 0 #000;`).
 * **Hiệu ứng Hover:** Khi di chuột, khối CTA sẽ nhấc nhẹ lên trên (`transform: translate(-4px, -4px)`) và bóng đổ dày lên, tạo cảm giác nổi bật và thúc đẩy click cực tốt.
 
-### 1.5. Cập nhật Master Content định dạng PDF
+### 1.7. Cập nhật Master Content định dạng PDF
 * **Xuất file PDF Chuyên nghiệp:** Tạo tài liệu Master Content tóm tắt toàn bộ nội dung website định dạng PDF. Tài liệu được thiết kế chỉn chu với trang bìa, hệ thống phông chữ đồng bộ (`Be Vietnam Pro` & `Lora`) và màu sắc thương hiệu đỏ/xanh navy của HR1.
 * **Nút Tải trực tiếp:** Thay thế nút tải file `.md` cũ bằng đường dẫn tải trực tiếp file PDF chuyên nghiệp: `assets/docs/HR1_Education_Hub_Master_Content.pdf`.
 
-### 1.6. Làm gọn giao diện (Xóa Accordion rỗng)
+### 1.8. Làm gọn giao diện (Xóa Accordion rỗng)
 * **Ẩn Accordion phụ:** Ẩn toàn bộ các thanh accordion "Xem toàn bộ nội dung final..." ở cuối mỗi section bằng CSS `display: none !important`. Điều này giúp trang web gọn gàng, giảm thiểu trải nghiệm dư thừa cho người dùng cuối khi chạy production.
 
-### 1.7. Hoàn thiện Footer & Biểu tượng mạng xã hội (Social Icons)
+### 1.9. Hoàn thiện Footer & Biểu tượng mạng xã hội (Social Icons)
 * **Cập nhật Liên kết Hệ sinh thái:** 
   * `HR1Jobs` -> Đổi thành link liên kết đến `https://hr1jobs.com/` (Nền tảng tuyển dụng đa ngành nghề).
   * `HR1Tech` -> Đổi thành link liên kết đến `https://hr1tech.com/` (Nền tảng tuyển dụng ngành CNTT).
