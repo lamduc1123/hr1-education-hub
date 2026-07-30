@@ -55,6 +55,28 @@ if(caseGallery && galleryPrev && galleryNext){
   updateGalleryButtons();
 }
 
+const flagshipGallery = $('#flagship-gallery');
+const flagshipPrev = $('.flagship-prev');
+const flagshipNext = $('.flagship-next');
+if(flagshipGallery && flagshipPrev && flagshipNext){
+  const updateFlagshipButtons = () => {
+    const maxScroll = flagshipGallery.scrollWidth - flagshipGallery.clientWidth;
+    flagshipPrev.disabled = flagshipGallery.scrollLeft <= 2;
+    flagshipNext.disabled = flagshipGallery.scrollLeft >= maxScroll - 2;
+  };
+  const scrollFlagship = direction => {
+    const card = $('figure', flagshipGallery);
+    const gap = 12;
+    const distance = card ? card.getBoundingClientRect().width + gap : flagshipGallery.clientWidth;
+    flagshipGallery.scrollBy({left: direction * distance, behavior:'smooth'});
+  };
+  flagshipPrev.addEventListener('click', () => scrollFlagship(-1));
+  flagshipNext.addEventListener('click', () => scrollFlagship(1));
+  flagshipGallery.addEventListener('scroll', updateFlagshipButtons, {passive:true});
+  addEventListener('resize', updateFlagshipButtons);
+  updateFlagshipButtons();
+}
+
 $$('.track-tab').forEach(btn => {
   btn.addEventListener('click', () => {
     $$('.track-tab').forEach(x => x.classList.remove('active'));
@@ -75,8 +97,10 @@ $$('.voice-tab').forEach(btn => {
 
 const modal = $('.video-modal');
 const frame = $('.video-frame');
-const openVideo = () => {
-  frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/vOjOEKsJE44?autoplay=1&rel=0&modestbranding=1" title="HUTECH × HR1Vietnam Vlog" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+const openVideo = (e) => {
+  const trigger = e.currentTarget;
+  const videoId = trigger.getAttribute('data-video') || 'vOjOEKsJE44';
+  frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" title="HR1Vietnam Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
