@@ -73,7 +73,8 @@ button{color:inherit}
 .media-label{position:absolute;z-index:2;right:26px;bottom:22px;left:26px;display:flex;align-items:end;justify-content:space-between;color:#fff}
 .media-label small{display:block;color:rgba(255,255,255,.72);font-size:8px;font-weight:800;letter-spacing:.14em}
 .media-label strong{display:block;margin-top:6px;font-size:19px}
-.video-chip{position:absolute;z-index:4;left:0;right:18px;bottom:0;display:flex;align-items:center;gap:18px;padding:14px 20px;background:var(--white);box-shadow:12px 12px 0 var(--ink)}
+.video-chip{position:absolute;z-index:4;left:0;right:18px;bottom:44px;display:flex;align-items:center;gap:18px;padding:14px 20px;background:var(--white);box-shadow:12px 12px 0 var(--ink);cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease),opacity .85s var(--ease) var(--delay,0ms),filter .85s var(--ease) var(--delay,0ms)}
+.video-chip.visible:hover{transform:translate(-4px,-4px);box-shadow:16px 16px 0 var(--ink)}
 .video-chip button{display:grid;width:52px;height:52px;place-items:center;border:0;border-radius:50%;background:var(--red);color:#fff;cursor:pointer;flex-shrink:0}
 .video-chip p{margin:0;font-size:12px;font-weight:750;line-height:1.4}
 .video-chip small{display:block;margin-top:4px;color:var(--muted);font-size:9px}
@@ -90,7 +91,18 @@ button{color:inherit}
 .section{padding:112px 0;border-bottom:1px solid var(--line)}
 .section-head{display:grid;grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr);gap:70px;align-items:end;margin-bottom:56px}
 .section-index{display:flex;align-items:flex-end;gap:16px}
-.section-index strong{color:transparent;-webkit-text-stroke:1px var(--red);font-family:var(--serif);font-size:76px;font-weight:600;line-height:.8}
+.section-index strong{display:inline-block;color:transparent;-webkit-text-stroke:1px var(--red);font-family:var(--serif);font-size:76px;font-weight:600;line-height:.8;transition:color 0.35s var(--ease),-webkit-text-stroke 0.35s var(--ease),transform 0.35s var(--ease)}
+.section-index:hover strong{color:var(--red);transform:translateY(-4px)}
+.why-section .section-index strong,
+.case-section .section-index strong{
+  -webkit-text-stroke-color: var(--white);
+}
+.why-section .section-index:hover strong,
+.case-section .section-index:hover strong{
+  color: var(--white);
+  -webkit-text-stroke-color: var(--white);
+  transform: translateY(-4px);
+}
 .section-index span{padding-bottom:5px;color:var(--red);font-size:9px;font-weight:900;letter-spacing:.17em}
 .section-title{margin:0;font-size:clamp(40px,5.2vw,76px);font-weight:850;letter-spacing:-.055em;line-height:.98}
 .section-title em{color:var(--red);font-family:var(--serif);font-weight:500}
