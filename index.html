@@ -53,7 +53,7 @@
           <p class="hero-intro" data-reveal style="--delay:220ms">HR1Vietnam đồng hành cùng nhà trường thông qua workshop, webinar, Company Tour và các chương trình đào tạo thực chiến, giúp sinh viên chủ động chuẩn bị cho hành trình thực tập, ứng tuyển và bắt đầu công việc đầu tiên.</p>
           <div class="hero-actions" data-reveal style="--delay:260ms">
             <a class="button primary" href="#solutions">Khám phá chương trình <span>↗</span></a>
-            <button class="button" data-video>Xem hoạt động thực tế <span>▶</span></button>
+            <button class="button" data-video="vOjOEKsJE44">Xem hoạt động thực tế <span>▶</span></button>
           </div>
           <div class="journey-line" data-reveal style="--delay:320ms">
             <div class="journey-node"><small>01</small><strong>Hiểu thị trường</strong></div>
@@ -70,10 +70,12 @@
             </picture>
             <div class="media-label"><div><small>REAL PROGRAMME EVIDENCE</small><strong>HUTECH × HR1Vietnam</strong></div><span>01 / 05</span></div>
           </div>
-          <div class="video-chip" data-reveal style="--delay:360ms">
-            <button data-video aria-label="Phát video HUTECH">▶</button>
-            <p>Company Tour & Đào tạo Tuyển dụng Thực tế</p>
-            <small>Click-to-play · Video lazy-load</small>
+          <div class="video-chip" data-reveal style="--delay:360ms" data-video="vOjOEKsJE44">
+            <button aria-label="Phát video HUTECH">▶</button>
+            <div class="video-chip-info">
+              <p>Company Tour & Đào tạo Tuyển dụng Thực tế</p>
+              <small>Click-to-play · Video lazy-load</small>
+            </div>
           </div>
         </div>
       </div>
@@ -101,9 +103,21 @@
           </div>
         </header>
         <div class="gap-layout">
-          <aside class="gap-sticky" data-reveal>
-            <blockquote>Khoảng cách này có thể được thu hẹp bằng trải nghiệm thực tế, sự hướng dẫn đúng lúc và chương trình sát thị trường.</blockquote>
-            <p>HR1 Career Index biến mỗi vấn đề thành một điểm chuyển tiếp trong hành trình từ người học đến ứng viên.</p>
+          <aside class="gap-sticky">
+            <div class="gap-text-card" data-reveal>
+              <blockquote>Khoảng cách này có thể được thu hẹp bằng trải nghiệm thực tế, sự hướng dẫn đúng lúc và chương trình sát thị trường.</blockquote>
+              <p>HR1 Career Index biến mỗi vấn đề thành một điểm chuyển tiếp trong hành trình từ người học đến ứng viên.</p>
+            </div>
+            <div class="gap-video-card" data-reveal style="--delay: 150ms;" data-video="___EZpl2N5c">
+              <div class="gap-video-thumbnail">
+                <img src="https://img.youtube.com/vi/___EZpl2N5c/hqdefault.jpg" alt="Video Giới Thiệu HR1 Education Hub" width="100" height="66">
+                <button class="gap-play-button" aria-label="Xem video giới thiệu">▶</button>
+              </div>
+              <div class="gap-video-info">
+                <strong>Xem Video Giới Thiệu</strong>
+                <span>HR1 Education Hub · Giới thiệu</span>
+              </div>
+            </div>
           </aside>
           <div class="editorial-list">
             <article class="editorial-row" data-reveal><div class="editorial-no">01</div><div><h3>Thiếu trải nghiệm thực tế</h3><p>Sinh viên chưa có nhiều cơ hội quan sát môi trường doanh nghiệp, quy trình tuyển dụng và cách kiến thức được áp dụng vào công việc.</p></div></article>
@@ -159,7 +173,7 @@
           </div>
         </div>
         <div class="ecosystem-strip" data-reveal>
-          <div class="ecosystem-item"><img src="assets/images/hr1vietnam.png" alt="HR1Vietnam Holdings"></div>
+          <div class="ecosystem-item"><img src="assets/images/hr1vietnam-optional.webp" alt="HR1Vietnam Holdings" style="max-width: 240px;"></div>
           <div class="ecosystem-item"><img src="assets/images/hr1jobs.png" alt="HR1Jobs"></div>
           <div class="ecosystem-item"><img src="assets/images/hr1tech.png" alt="HR1Tech"></div>
         </div>
@@ -604,7 +618,16 @@
         </header>
         <div class="flagship-layout">
           <div class="flagship-media" data-reveal>
-            <div class="flagship-image image-reveal"><img src="assets/images/workshop-ai-career.webp" alt="Flagship Workshop về CV, phỏng vấn và ứng dụng AI" width="1400" height="933" loading="lazy" decoding="async"><span class="flagship-stamp">CV • PHONG THÁI • AI • S.T.A.R</span></div>
+            <div class="flagship-gallery-wrap">
+              <button class="gallery-arrow gallery-prev flagship-prev" type="button" aria-label="Xem hình ảnh trước" aria-controls="flagship-gallery">←</button>
+              <div class="flagship-gallery" id="flagship-gallery" aria-label="Hình ảnh hoạt động thực tế của Flagship Workshop" tabindex="0">
+                <figure><img src="assets/images/workshop-dhct-01.webp" alt="Hình ảnh Workshop tại Đại học Công Thương 01" width="1200" height="800" loading="lazy" decoding="async"></figure>
+                <figure><img src="assets/images/workshop-dhct-02.webp" alt="Hình ảnh Workshop tại Đại học Công Thương 02" width="1200" height="800" loading="lazy" decoding="async"></figure>
+                <figure><img src="assets/images/workshop-dhct-03.webp" alt="Hình ảnh Workshop tại Đại học Công Thương 03" width="1200" height="800" loading="lazy" decoding="async"></figure>
+              </div>
+              <button class="gallery-arrow gallery-next flagship-next" type="button" aria-label="Xem thêm hình ảnh" aria-controls="flagship-gallery">→</button>
+              <span class="flagship-stamp">CV • PHONG THÁI • AI • S.T.A.R</span>
+            </div>
             <div class="detail-accordion">
               <details><summary>Đối tượng phù hợp</summary><div class="detail-body">Sinh viên chuẩn bị thực tập, sinh viên năm ba hoặc năm tư, sinh viên chưa từng tham gia phỏng vấn và sinh viên chuẩn bị tìm việc đầu tiên.</div></details>
               <details><summary>Hình thức triển khai</summary><div class="detail-body">Workshop trực tiếp, webinar, chuyên đề nghề nghiệp, hoạt động chuẩn bị trước Job Fair hoặc module thuộc chương trình Career Readiness.</div></details>
@@ -852,14 +875,14 @@
         </header>
         <div class="case-hero">
           <div class="case-film image-reveal">
-            <img src="assets/images/hutech-company-tour.webp" alt="Case Study Company Tour HUTECH và HR1Vietnam" width="800" height="533" loading="lazy" decoding="async">
-            <button class="play-button" data-video aria-label="Xem HUTECH Vlog">▶</button>
+            <img src="https://img.youtube.com/vi/vOjOEKsJE44/hqdefault.jpg" alt="Case Study Company Tour HUTECH và HR1Vietnam" width="800" height="533" loading="lazy" decoding="async" style="object-fit: cover;">
+            <button class="play-button" data-video="vOjOEKsJE44" aria-label="Xem HUTECH Vlog">▶</button>
             <div class="case-film-caption"><small>REAL PROGRAMME · VIDEO VLOG</small><h3>Đào tạo Tuyển dụng Thực tế tại Doanh nghiệp</h3></div>
           </div>
           <aside class="case-side" data-reveal>
             <blockquote>Quan sát. Thực hành. Đổi vai. Nhận phản hồi.</blockquote>
             <p>Sinh viên tiếp cận quy trình tuyển dụng từ đăng tin, sourcing và screening CV đến mời phỏng vấn, phỏng vấn và đánh giá ứng viên.</p>
-            <button class="button light" data-video>Xem Video Vlog →</button>
+            <button class="button light" data-video="vOjOEKsJE44">Xem Video Vlog →</button>
           </aside>
         </div>
         <div class="case-gallery-wrap">
@@ -1245,13 +1268,13 @@
           <div class="section-index"><strong>07</strong><span>PARTNERSHIP PROCESS</span></div>
           <div><h2 class="section-title">Từ nhu cầu của nhà trường đến một chương trình phù hợp với sinh viên</h2><p class="section-lead">Quy trình linh hoạt, bắt đầu từ việc tìm hiểu nhu cầu và kết thúc bằng tổng kết, đánh giá và đề xuất phát triển tiếp theo.</p></div>
         </header>
-        <div class="process-grid" data-reveal>
-          <article class="process-step"><small>01</small><h3>Trao đổi nhu cầu</h3><p>Lắng nghe đối tượng, mục tiêu và learning outcomes.</p></article>
-          <article class="process-step"><small>02</small><h3>Thiết kế chương trình</h3><p>Đề xuất agenda, module, phương pháp và đầu ra.</p></article>
-          <article class="process-step"><small>03</small><h3>Thống nhất triển khai</h3><p>Chốt timeline, nguồn lực, hồ sơ và trách nhiệm phối hợp.</p></article>
-          <article class="process-step"><small>04</small><h3>Kick-off & chuẩn bị</h3><p>Chuẩn bị tâm thế, thông tin và điều kiện cần thiết.</p></article>
-          <article class="process-step"><small>05</small><h3>Tổ chức chương trình</h3><p>Triển khai bằng trải nghiệm, thực hành và phản hồi.</p></article>
-          <article class="process-step"><small>06</small><h3>Tổng kết & phát triển tiếp</h3><p>Ghi nhận phản hồi và đề xuất bước hợp tác tiếp theo.</p></article>
+        <div class="process-grid">
+          <article class="process-step" data-reveal style="--delay: 0ms;"><small>01</small><h3>Trao đổi nhu cầu</h3><p>Lắng nghe đối tượng, mục tiêu và learning outcomes.</p><div class="process-icon"><i class="fa-regular fa-comments"></i></div></article>
+          <article class="process-step" data-reveal style="--delay: 150ms;"><small>02</small><h3>Thiết kế chương trình</h3><p>Đề xuất agenda, module, phương pháp và đầu ra.</p><div class="process-icon"><i class="fa-solid fa-pen-ruler"></i></div></article>
+          <article class="process-step" data-reveal style="--delay: 300ms;"><small>03</small><h3>Thống nhất triển khai</h3><p>Chốt timeline, nguồn lực, hồ sơ và trách nhiệm phối hợp.</p><div class="process-icon"><i class="fa-regular fa-handshake"></i></div></article>
+          <article class="process-step" data-reveal style="--delay: 450ms;"><small>04</small><h3>Kick-off & chuẩn bị</h3><p>Chuẩn bị tâm thế, thông tin và điều kiện cần thiết.</p><div class="process-icon"><i class="fa-solid fa-rocket"></i></div></article>
+          <article class="process-step" data-reveal style="--delay: 600ms;"><small>05</small><h3>Tổ chức chương trình</h3><p>Triển khai bằng trải nghiệm, thực hành và phản hồi.</p><div class="process-icon"><i class="fa-solid fa-graduation-cap"></i></div></article>
+          <article class="process-step" data-reveal style="--delay: 750ms;"><small>06</small><h3>Tổng kết & phát triển tiếp</h3><p>Ghi nhận phản hồi và đề xuất bước hợp tác tiếp theo.</p><div class="process-icon"><i class="fa-solid fa-chart-line"></i></div></article>
         </div>
         <details class="master-detail"><summary>Xem toàn bộ nội dung final của section</summary><div class="master-content"><h1>08. Partnership Process</h1>
 <h2>Eyebrow</h2>
@@ -1514,7 +1537,7 @@
             <div class="field"><label>Số lượng sinh viên</label><select id="lead-students"><option>Dưới 50</option><option>50–100</option><option>100–300</option><option>Trên 300</option></select></div>
             <div class="field full"><label>Nội dung cần trao đổi</label><textarea id="lead-message" placeholder="Mục tiêu, thời gian dự kiến hoặc nhu cầu đào tạo"></textarea></div>
           </div>
-          <div class="form-actions"><button class="button primary" type="submit">Gửi yêu cầu hợp tác →</button><a class="button" href="content/HR1_Education_Partnership_Hub_Master_Content_V1.md" download>Tải Master Content</a></div>
+          <div class="form-actions"><button class="button primary" type="submit">Gửi yêu cầu hợp tác →</button><a class="button" href="assets/docs/Thu_Moi_Hop_Tac_HR1Vietnam.pdf" download>Thư Mời Hợp Tác</a></div>
           <p class="form-note"><i class="fa-solid fa-circle-check"></i> Form đã được kết nối hệ thống tự động lưu trữ và gửi thông báo trực tuyến.</p>
         </form>
         <details class="master-detail" style="grid-column:1/-1"><summary>Xem toàn bộ nội dung final của section</summary><div class="master-content"><h1>09. Final CTA &amp; Lead Form</h1>
@@ -1703,8 +1726,27 @@
   <footer class="footer">
     <div class="shell">
       <div class="footer-grid">
-        <div><img src="assets/images/hr1vietnam.png" alt="HR1Vietnam Holdings"><p>HR1Vietnam Education Partnership Hub kết nối giáo dục với thực tiễn doanh nghiệp, giúp sinh viên phát triển năng lực nghề nghiệp và sẵn sàng trở thành nguồn nhân lực tương lai.</p></div>
-        <div><h4>Ecosystem</h4><p>HR1Jobs<br>HR1Tech</p></div>
+        <div>
+          <img src="assets/images/hr1vietnam.png" alt="HR1Vietnam Holdings">
+          <p>HR1Vietnam Education Partnership Hub kết nối giáo dục với thực tiễn doanh nghiệp, giúp sinh viên phát triển năng lực nghề nghiệp và sẵn sàng trở thành nguồn nhân lực tương lai.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/hr1vietnam" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/hr1vietnam/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://zalo.me/4373873610690962708" target="_blank" aria-label="Zalo" class="zalo-link">
+              <svg class="zalo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                <text x="12" y="15.5" font-size="11" font-weight="900" font-family="system-ui" fill="currentColor" text-anchor="middle">Z</text>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Ecosystem</h4>
+          <p>
+            <a href="https://hr1jobs.com/" target="_blank" style="font-weight:700;text-decoration:underline;">HR1Jobs</a> - Nền tảng tuyển dụng đa ngành nghề<br>
+            <a href="https://hr1tech.com/" target="_blank" style="font-weight:700;text-decoration:underline;">HR1Tech</a> - Nền tảng tuyển dụng ngành CNTT
+          </p>
+        </div>
         <div><h4>Prototype Notes</h4><p>Static HTML · Responsive<br>Media 16:9 · Lazy loading<br>Motion có reduced-motion support</p></div>
       </div>
       <div class="footer-bottom"><span>© 2026 HR1Vietnam Holdings</span><span>Career Readiness Atlas · Prototype V1</span></div>
