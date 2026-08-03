@@ -645,3 +645,12 @@ button{color:inherit}
 .footer-socials svg {
   vertical-align: middle;
 }
+
+@media(max-width:760px) {
+  .flagship-prev {
+    left: 6px;
+  }
+  .flagship-next {
+    right: 6px;
+  }
+}
