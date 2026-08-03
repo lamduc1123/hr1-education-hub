@@ -58,6 +58,10 @@
   * **LinkedIn:** Link dẫn về trang Company chính thức.
   * **Zalo:** Bổ sung icon SVG Zalo tối giản thiết kế riêng (nét mảnh mượt mà, đồng bộ ngôn ngữ Feather Icons).
 
+### 1.11. Sửa lỗi tương thích trình duyệt (Chrome/Safari) và tối ưu hóa Responsive Mobile
+* **Sửa lỗi trống ảnh/video ở Section 05 trên Chrome:** Tách biệt bộ quan sát hoạt họa `.image-reveal` trong JavaScript sang một tiến trình riêng có `threshold: 0`. Cách này bỏ qua cơ chế tối ưu bounding box của Chrome đối với các phần tử sử dụng thuộc tính `clip-path` (vốn là nguyên nhân khiến Chrome coi diện tích hiển thị bằng 0 và không kích hoạt ảnh), đảm bảo hình ảnh video Vlog HUTECH hiển thị đồng bộ 100% trên cả Chrome và Safari.
+* **Sửa lỗi lệch nút mũi tên Slide Flagship trên Mobile:** Thêm mã lệnh `@media(max-width:760px)` để điều chỉnh vị trí nút mũi tên cuộn slide `.flagship-prev` và `.flagship-next` từ `-18px` (bản Desktop) thành `6px` (bản Mobile). Điều này ngăn các nút mũi tên bị đẩy ra ngoài biên màn hình điện thoại, giúp người dùng chạm vuốt dễ dàng trên các thiết bị di động.
+
 ---
 
 ## 2. Chi Tiết File Thay Đổi (Technical Changelog)
