@@ -88,6 +88,28 @@ if(flagshipGallery && flagshipPrev && flagshipNext){
   updateFlagshipButtons();
 }
 
+const partnersGallery = $('#partners-gallery');
+const partnersPrev = $('.partners-prev');
+const partnersNext = $('.partners-next');
+if(partnersGallery && partnersPrev && partnersNext){
+  const updatePartnersButtons = () => {
+    const maxScroll = partnersGallery.scrollWidth - partnersGallery.clientWidth;
+    partnersPrev.disabled = partnersGallery.scrollLeft <= 2;
+    partnersNext.disabled = partnersGallery.scrollLeft >= maxScroll - 2;
+  };
+  const scrollPartners = direction => {
+    const card = $('.partner-card', partnersGallery);
+    const gap = 24;
+    const distance = card ? card.getBoundingClientRect().width + gap : partnersGallery.clientWidth;
+    partnersGallery.scrollBy({left: direction * distance, behavior:'smooth'});
+  };
+  partnersPrev.addEventListener('click', () => scrollPartners(-1));
+  partnersNext.addEventListener('click', () => scrollPartners(1));
+  partnersGallery.addEventListener('scroll', updatePartnersButtons, {passive:true});
+  addEventListener('resize', updatePartnersButtons);
+  updatePartnersButtons();
+}
+
 $$('.track-tab').forEach(btn => {
   btn.addEventListener('click', () => {
     $$('.track-tab').forEach(x => x.classList.remove('active'));

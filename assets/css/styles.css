@@ -647,11 +647,22 @@ button{color:inherit}
 }
 
 @media(max-width:760px) {
-  .flagship-prev {
+  .flagship-prev, .partners-prev {
     left: 6px;
   }
-  .flagship-next {
+  .flagship-next, .partners-next {
     right: 6px;
+  }
+  .partners-cta-bar {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 20px;
+  }
+  .cta-bar-content {
+    flex-direction: column;
+  }
+  .partner-about-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -659,12 +670,157 @@ button{color:inherit}
    PARTNERS MODULE & PARTNER DETAIL PAGE STYLES
    ========================================================================== */
 
-/* 1. Homepage Partners Grid */
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* 1. Homepage Partners Carousel Slider */
+.partners-gallery-wrap {
+  position: relative;
+  margin-bottom: 24px;
+}
+.partners-gallery {
+  display: flex;
   gap: 24px;
-  margin-top: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 8px 4px 16px;
+}
+.partners-gallery::-webkit-scrollbar {
+  display: none;
+}
+.partners-gallery .partner-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 310px;
+  scroll-snap-align: start;
+}
+.partners-prev {
+  left: -18px;
+}
+.partners-next {
+  right: -18px;
+}
+
+/* Standalone Partners CTA Bar */
+.partners-cta-bar {
+  background: var(--ink);
+  color: var(--white);
+  padding: 28px 36px;
+  border: 1.5px solid var(--red);
+  box-shadow: 10px 10px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 16px;
+}
+.cta-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cta-bar-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(177, 11, 22, 0.2);
+  border: 1px solid var(--red);
+  color: var(--red);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.cta-bar-content h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 4px;
+}
+.cta-bar-content p {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+}
+
+/* 2. About Partner Section (partner-detail.html) */
+.partner-about-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  align-items: start;
+}
+.partner-about-text h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.partner-about-text p {
+  font-size: 14px;
+  color: var(--graphite);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.about-highlights-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.highlight-item i {
+  font-size: 20px;
+  color: var(--red);
+  background: rgba(177, 11, 22, 0.08);
+  padding: 10px;
+  border: 1px solid rgba(177, 11, 22, 0.2);
+}
+.highlight-item strong {
+  display: block;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.highlight-item span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.partner-about-card {
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  padding: 30px;
+  box-shadow: 10px 10px 0 var(--ink);
+}
+.partner-about-logo-wrap {
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed var(--line);
+}
+.partner-about-logo-wrap img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+.about-meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--graphite);
+}
+.about-meta-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.about-meta-list li:last-child {
+  border-bottom: 0;
+}
+.about-meta-list strong {
+  color: var(--ink);
 }
 .partner-card {
   background: var(--white);
