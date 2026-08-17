@@ -3,14 +3,16 @@ const $ = (s, c=document) => c.querySelector(s);
 const $$ = (s, c=document) => [...c.querySelectorAll(s)];
 
 const progress = $('.scroll-progress');
-const updateProgress = () => {
-  const max = document.documentElement.scrollHeight - innerHeight;
-  const ratio = max > 0 ? scrollY / max : 0;
-  progress.style.transform = `scaleX(${Math.min(1, ratio)})`;
-};
-addEventListener('scroll', updateProgress, {passive:true});
-addEventListener('resize', updateProgress);
-updateProgress();
+if(progress){
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const ratio = max > 0 ? scrollY / max : 0;
+    progress.style.transform = `scaleX(${Math.min(1, ratio)})`;
+  };
+  addEventListener('scroll', updateProgress, {passive:true});
+  addEventListener('resize', updateProgress);
+  updateProgress();
+}
 
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
