@@ -15,6 +15,63 @@
   
   <!-- STYLES -->
   <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <style>
+    /* Direct visibility override: guarantees instant display on Safari/Chrome */
+    .partner-detail-page [data-reveal],
+    .partner-detail-page .photo-item,
+    .partner-detail-page .article-card,
+    .partner-detail-page .scope-card,
+    .partner-detail-page .partner-about-text,
+    .partner-detail-page .partner-about-card,
+    .partner-detail-page .partner-hero-card {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      visibility: visible !important;
+      transition: none !important;
+    }
+    .partner-photo-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px !important;
+      margin-top: 16px !important;
+    }
+    .photo-item {
+      background: #ffffff !important;
+      border: 1px solid rgba(16, 24, 40, 0.16) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+      box-shadow: 4px 4px 0 rgba(16, 24, 40, 0.06) !important;
+    }
+    .photo-item img {
+      width: 100% !important;
+      aspect-ratio: 16/10 !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+    .photo-item figcaption {
+      padding: 12px 14px !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      color: #101828 !important;
+      background: #ffffff !important;
+      border-top: 1px solid rgba(16, 24, 40, 0.1) !important;
+      line-height: 1.45 !important;
+    }
+    @media(max-width: 900px) {
+      .partner-photo-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+    @media(max-width: 600px) {
+      .partner-photo-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
 </head>
 <body class="partner-detail-page">
   <div class="scroll-progress" aria-hidden="true"></div>
