@@ -1053,11 +1053,11 @@ button{color:inherit}
 }
 
 .partner-logo-row.single-logo {
-  background: #ffffff;
-  padding: 16px 32px;
-  border-radius: 4px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  margin-bottom: 28px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 24px;
   width: fit-content;
 }
 .partner-hero-logo.hutech-enlarged img {
@@ -1067,30 +1067,33 @@ button{color:inherit}
   object-fit: contain;
 }
 
-/* Single line full-width section headers for partner detail */
+/* Stacked full-width section headers for partner detail - zero text collision */
 .partner-detail-page .section-head {
-  grid-template-columns: 80px 1fr;
-  gap: 32px;
-  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   margin-bottom: 36px;
 }
+.partner-detail-page .section-index {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
 .partner-detail-page .section-title {
-  white-space: nowrap;
-  font-size: clamp(28px, 3.4vw, 42px);
-  margin-bottom: 8px;
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.8vw, 44px);
+  color: var(--ink);
+  margin: 0 0 6px 0;
+  line-height: 1.25;
 }
 .partner-detail-page .section-lead {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
   margin: 0;
-  max-width: 100%;
-}
-@media(max-width: 900px) {
-  .partner-detail-page .section-head {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .partner-detail-page .section-title {
-    white-space: normal;
-  }
+  max-width: 900px;
 }
 
 /* 4. Horizontal Photo Gallery Carousel */
