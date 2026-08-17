@@ -19,7 +19,7 @@ const revealObserver = new IntersectionObserver(entries => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, {threshold:.08, rootMargin:'0px 0px -6% 0px'});
+}, {threshold:0, rootMargin:'0px 0px 200px 0px'});
 $$('[data-reveal]').forEach(el => revealObserver.observe(el));
 
 // Separate observer for image-reveal with threshold 0 to fix Chrome clip-path intersection bug
@@ -30,7 +30,7 @@ const imageRevealObserver = new IntersectionObserver(entries => {
       imageRevealObserver.unobserve(entry.target);
     }
   });
-}, {threshold:0, rootMargin:'0px 0px -6% 0px'});
+}, {threshold:0, rootMargin:'0px 0px 200px 0px'});
 $$('.image-reveal').forEach(el => imageRevealObserver.observe(el));
 
 const timeline = $('.documentary-timeline');
