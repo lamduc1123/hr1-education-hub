@@ -1052,72 +1052,198 @@ button{color:inherit}
   margin: 0;
 }
 
-/* 4. Photo Gallery Grid */
-.partner-photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.partner-logo-row.single-logo {
+  background: #ffffff;
+  padding: 16px 32px;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  margin-bottom: 28px;
+  width: fit-content;
 }
-.photo-item {
+.partner-hero-logo.hutech-enlarged img {
+  height: 64px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Single line full-width section headers for partner detail */
+.partner-detail-page .section-head {
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  margin-bottom: 36px;
+}
+.partner-detail-page .section-title {
+  white-space: nowrap;
+  font-size: clamp(28px, 3.4vw, 42px);
+  margin-bottom: 8px;
+}
+.partner-detail-page .section-lead {
   margin: 0;
-  background: var(--white);
-  border: 1px solid var(--line);
-  overflow: hidden;
-  min-height: 220px;
-  aspect-ratio: 16/11;
-  display: flex;
-  flex-direction: column;
+  max-width: 100%;
 }
-.photo-item img {
+@media(max-width: 900px) {
+  .partner-detail-page .section-head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .partner-detail-page .section-title {
+    white-space: normal;
+  }
+}
+
+/* 4. Horizontal Photo Gallery Carousel */
+.partner-slider-wrap {
+  position: relative;
+  margin-top: 10px;
+}
+.partner-gallery-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px 16px;
+}
+.partner-gallery-slider::-webkit-scrollbar {
+  display: none;
+}
+.slider-photo-card {
+  flex: 0 0 380px;
+  min-width: 300px;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--white);
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: 4px 4px 0 rgba(16,24,40,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.slider-photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+.slider-photo-card img {
   width: 100%;
   aspect-ratio: 16/10;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
 }
-.photo-item:hover img {
-  transform: scale(1.04);
-}
-.photo-item figcaption {
-  padding: 14px 16px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--ink);
+.partner-gallery-prev,
+.partner-gallery-next {
+  position: absolute;
+  top: calc(50% - 24px);
+  z-index: 5;
+  width: 48px;
+  height: 48px;
   background: var(--white);
-  border-top: 1px solid var(--line);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: all 0.2s ease;
+}
+.partner-gallery-prev:hover:not(:disabled),
+.partner-gallery-next:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--white);
+  transform: scale(1.05);
+}
+.partner-gallery-prev:disabled,
+.partner-gallery-next:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.partner-gallery-prev {
+  left: -20px;
+}
+.partner-gallery-next {
+  right: -20px;
+}
+@media(max-width: 760px) {
+  .partner-gallery-prev { left: 4px; }
+  .partner-gallery-next { right: 4px; }
+  .slider-photo-card { flex: 0 0 85%; min-width: 260px; }
 }
 
-/* 5. Ecosystem Articles Grid */
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.article-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  position: relative;
+/* 5. Row-based Articles List */
+.articles-list-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 6px 6px 0 rgba(16,24,40,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  gap: 24px;
+  margin-top: 10px;
 }
-.article-card:hover {
+.article-row-card {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 32px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 24px;
+  box-shadow: 8px 8px 0 rgba(16,24,40,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  align-items: center;
+}
+.article-row-card:hover {
   transform: translateY(-4px);
   border-color: var(--ink);
-  box-shadow: 10px 10px 0 var(--ink);
+  box-shadow: 12px 12px 0 var(--ink);
 }
-.article-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 2;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 5px 10px;
-  color: var(--white);
+.article-row-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  background: rgba(16,24,40,0.05);
+}
+.article-row-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.article-row-card:hover .article-row-image img {
+  transform: scale(1.04);
+}
+.article-row-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.article-meta-row {
+  margin-bottom: 10px;
+}
+.article-row-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+.article-sapo {
+  font-size: 14px;
+  color: var(--graphite);
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+.article-cta-btn {
+  align-self: flex-start;
+  font-size: 12px;
+}
+@media(max-width: 900px) {
+  .article-row-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
   box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
 }
 .article-badge.hr1vietnam { background: #B11116; }

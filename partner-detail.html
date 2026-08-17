@@ -15,66 +15,10 @@
   
   <!-- STYLES -->
   <link rel="stylesheet" href="assets/css/styles.css">
-  
-  <style>
-    /* Direct visibility override: guarantees instant display on Safari/Chrome */
-    .partner-detail-page [data-reveal],
-    .partner-detail-page .photo-item,
-    .partner-detail-page .article-card,
-    .partner-detail-page .scope-card,
-    .partner-detail-page .partner-about-text,
-    .partner-detail-page .partner-about-card,
-    .partner-detail-page .partner-hero-card {
-      opacity: 1 !important;
-      transform: none !important;
-      filter: none !important;
-      visibility: visible !important;
-      transition: none !important;
-    }
-    .partner-photo-grid {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 20px !important;
-      margin-top: 16px !important;
-    }
-    .photo-item {
-      background: #ffffff !important;
-      border: 1px solid rgba(16, 24, 40, 0.16) !important;
-      display: flex !important;
-      flex-direction: column !important;
-      margin: 0 !important;
-      overflow: hidden !important;
-      box-shadow: 4px 4px 0 rgba(16, 24, 40, 0.06) !important;
-    }
-    .photo-item img {
-      width: 100% !important;
-      aspect-ratio: 16/10 !important;
-      object-fit: cover !important;
-      display: block !important;
-    }
-    .photo-item figcaption {
-      padding: 12px 14px !important;
-      font-size: 12px !important;
-      font-weight: 600 !important;
-      color: #101828 !important;
-      background: #ffffff !important;
-      border-top: 1px solid rgba(16, 24, 40, 0.1) !important;
-      line-height: 1.45 !important;
-    }
-    @media(max-width: 900px) {
-      .partner-photo-grid {
-        grid-template-columns: 1fr 1fr !important;
-      }
-    }
-    @media(max-width: 600px) {
-      .partner-photo-grid {
-        grid-template-columns: 1fr !important;
-      }
-    }
-  </style>
 </head>
 <body class="partner-detail-page">
   <div class="scroll-progress" aria-hidden="true"></div>
+  
   <!-- TOP NAV -->
   <header class="header">
     <div class="shell header-inner">
@@ -102,17 +46,15 @@
             <span class="partner-type-tag">ĐẠI HỌC CÔNG NGHỆ TP.HCM</span>
           </div>
 
-          <div class="partner-logo-row">
-            <div class="partner-hero-logo">
+          <!-- ENLARGED SINGLE HUTECH LOGO -->
+          <div class="partner-logo-row single-logo">
+            <div class="partner-hero-logo hutech-enlarged">
               <img src="certificate/assets/images/hutechlogo.png" alt="Logo HUTECH">
-            </div>
-            <div class="partner-link-symbol">×</div>
-            <div class="partner-hero-logo hr1">
-              <img src="assets/images/hr1vietnam-optional.webp" alt="HR1Vietnam Holdings" style="filter: brightness(0) invert(1);">
             </div>
           </div>
 
-          <h1 class="partner-hero-title">Đồng Hành Phát Triển Năng Lực & Sẵn Sàng Nghề Nghiệp Cho Sinh Viên HUTECH</h1>
+          <!-- OPTIMIZED TITLE WITH LINE BREAK -->
+          <h1 class="partner-hero-title">Đồng Hành Phát Triển Năng Lực & Sẵn Sàng Nghề Nghiệp<br>Cho Sinh Viên HUTECH</h1>
           <p class="partner-hero-lead">Chương trình hợp tác chiến lược giữa <strong>HR1Vietnam Holdings</strong> và <strong>Trường Đại học Công Nghệ TP.HCM (HUTECH)</strong> nhằm rút ngắn khoảng cách giữa tri thức học thuật trên giảng đường và thực tiễn tuyển dụng tại doanh nghiệp.</p>
 
           <div class="partner-quick-stats">
@@ -141,7 +83,7 @@
     <section class="section partner-about-section">
       <div class="shell">
         <header class="section-head">
-          <div class="section-index"><strong>01</strong><span>ABOUT THE PARTNER & MILESTONES</span></div>
+          <div class="section-index"><strong>01</strong><span>ABOUT THE PARTNER</span></div>
           <div>
             <h2 class="section-title">Giới thiệu & Cột mốc Hợp tác</h2>
             <p class="section-lead">Tổng quan về Trường Đại học Công Nghệ TP.HCM (HUTECH) và hành trình đồng hành cùng HR1Vietnam Holdings từ năm 2023 đến nay.</p>
@@ -239,136 +181,70 @@
       </div>
     </section>
 
-    <!-- SECTION 03: PHOTO GALLERY SECTION -->
+    <!-- SECTION 03: PHOTO GALLERY SECTION (HORIZONTAL CAROUSEL SLIDER) -->
     <section class="section partner-gallery-section">
       <div class="shell">
         <header class="section-head">
           <div class="section-index"><strong>03</strong><span>ACTIVITY GALLERY</span></div>
           <div>
-            <h2 class="section-title">Hình ảnh Hoạt động Thực tế (15 Tư Liệu)</h2>
+            <h2 class="section-title">Hình ảnh Hoạt động Thực tế</h2>
             <p class="section-lead">Bộ ảnh thực tế toàn diện trong chuỗi chương trình Ký kết MOU, Hội thảo Kick-off và các đợt Company Tour đào tạo sinh viên HUTECH tại HR1Vietnam Holdings.</p>
           </div>
         </header>
 
-        <div class="partner-photo-grid">
-          <!-- MOU & KICK-OFF -->
-          <figure class="photo-item" data-reveal>
-            <img src="assets/images/hutech/ky-mou-01.jpg" alt="Lễ ký kết biên bản ghi nhớ hợp tác MOU giữa HR1Vietnam và HUTECH" loading="lazy">
-            <figcaption>Lễ Ký kết Biên bản Ghi nhớ Hợp tác (MOU) giữa HR1Vietnam Holdings & HUTECH</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 60ms;">
-            <img src="assets/images/hutech/ky-mou-02.jpg" alt="Trao biên bản ghi nhớ hợp tác chiến lược MOU" loading="lazy">
-            <figcaption>Đại diện Lãnh đạo HR1 và HUTECH trao đổi biên bản hợp tác chiến lược</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 120ms;">
-            <img src="assets/images/hutech/kick-off-01.jpg" alt="Toàn cảnh hội trường sự kiện Kick-off sinh viên HUTECH" loading="lazy">
-            <figcaption>Toàn cảnh buổi Kick-off khởi động chuỗi chương trình đào tạo tuyển dụng</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 180ms;">
-            <img src="assets/images/hutech/kick-off-02.jpg" alt="Phát biểu định hướng từ đại diện Khoa HUTECH" loading="lazy">
-            <figcaption>Đại diện Ban Chủ nhiệm Khoa HUTECH phát biểu định hướng học tập thực chiến</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 240ms;">
-            <img src="assets/images/hutech/kick-off-03.jpg" alt="Chuyên gia HR1 chia sẻ xu hướng thị trường tuyển dụng" loading="lazy">
-            <figcaption>Chuyên gia HR1Vietnam chia sẻ bức tranh nhu cầu tuyển dụng thực tế</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 300ms;">
-            <img src="assets/images/hutech/kick-off-04.jpg" alt="Ban Lãnh đạo HR1 và Quý Thầy Cô Giảng viên HUTECH" loading="lazy">
-            <figcaption>Đại diện Ban Lãnh đạo HR1 & Quý Thầy Cô Giảng viên HUTECH lưu niệm</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 360ms;">
-            <img src="assets/images/hutech/kick-off-05.jpg" alt="Sinh viên HUTECH hào hứng thảo luận và đặt câu hỏi" loading="lazy">
-            <figcaption>Sinh viên HUTECH hào hứng tham gia thảo luận và tương tác cùng diễn giả</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 420ms;">
-            <img src="assets/images/hutech/kick-off-06.jpg" alt="Không gian giao lưu thân mật giữa doanh nghiệp và sinh viên" loading="lazy">
-            <figcaption>Không gian giao lưu giải đáp thắc mắc nghề nghiệp trực tiếp</figcaption>
-          </figure>
+        <!-- HORIZONTAL CAROUSEL SLIDER -->
+        <div class="partner-slider-wrap" data-reveal>
+          <button class="gallery-arrow gallery-prev partner-gallery-prev" type="button" aria-label="Xem ảnh trước" aria-controls="partner-gallery-slider">←</button>
 
-          <!-- COMPANY TOUR & WORKSHOP -->
-          <figure class="photo-item" data-reveal style="--delay: 480ms;">
-            <img src="assets/images/hutech/company-tour-01.png" alt="Sinh viên HUTECH tham quan trụ sở HR1Vietnam" loading="lazy">
-            <figcaption>Sinh viên HUTECH tham quan và trải nghiệm môi trường làm việc HR1</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 540ms;">
-            <img src="assets/images/hutech/company-tour-02.webp" alt="Khám phá không gian làm việc chuyên nghiệp thực tế" loading="lazy">
-            <figcaption>Khám phá các phòng ban chuyên môn và quy trình làm việc thực tế</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 600ms;">
-            <img src="assets/images/hutech/company-tour-03.webp" alt="Định hướng quy trình vận hành phòng Nhân sự" loading="lazy">
-            <figcaption>Tập huấn nghiệp vụ đọc hiểu JD và tiêu chuẩn đánh giá ứng viên</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 660ms;">
-            <img src="assets/images/hutech/company-tour-04.jpg" alt="Sinh viên thực hành phỏng vấn role-play" loading="lazy">
-            <figcaption>Thực hành phỏng vấn đối ứng (Role-play) và nhận phản hồi kỹ năng</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 720ms;">
-            <img src="assets/images/hutech/company-tour-05.jpg" alt="Sinh viên nhập vai Nhà tuyển dụng sàng lọc CV" loading="lazy">
-            <figcaption>Sinh viên nhập vai Nhà tuyển dụng thực hành sàng lọc hồ sơ ứng viên</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 780ms;">
-            <img src="assets/images/hutech/company-tour-06.jpg" alt="Hướng dẫn phương pháp phỏng vấn S.T.A.R" loading="lazy">
-            <figcaption>Chuyên gia HR1 hướng dẫn phương pháp trả lời phỏng vấn theo mô hình S.T.A.R</figcaption>
-          </figure>
-          <figure class="photo-item" data-reveal style="--delay: 840ms;">
-            <img src="assets/images/hutech/company-tour-07.jpg" alt="Tổng kết và trao Chứng nhận E-Certificate" loading="lazy">
-            <figcaption>Tổng kết & trao Chứng nhận hoàn thành tập huấn chuyên môn số hóa</figcaption>
-          </figure>
+          <div class="partner-gallery-slider" id="partner-gallery-slider" tabindex="0">
+            <!-- 15 FULL HD PHOTOS WITHOUT CAPTIONS -->
+            <figure class="slider-photo-card"><img src="assets/images/hutech/ky-mou-01.jpg" alt="Lễ Ký kết Biên bản Ghi nhớ Hợp tác MOU" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/ky-mou-02.jpg" alt="Trao đổi biên bản MOU chiến lược" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/kick-off-01.jpg" alt="Toàn cảnh buổi Kick-off" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/kick-off-02.jpg" alt="Đại diện Khoa HUTECH phát biểu" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/kick-off-03.jpg" alt="Chuyên gia HR1 chia sẻ xu hướng" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/kick-off-04.jpg" alt="Chụp ảnh lưu niệm cùng Giảng viên" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/kick-off-05.jpg" alt="Sinh viên HUTECH tương tác" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/kick-off-06.jpg" alt="Giao lưu giải đáp thắc mắc nghề nghiệp" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/company-tour-01.png" alt="Sinh viên HUTECH tham quan trụ sở HR1" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/company-tour-02.webp" alt="Khám phá không gian làm việc thực tế" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/company-tour-03.webp" alt="Định hướng quy trình phòng Nhân sự" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/company-tour-04.jpg" alt="Thực hành phỏng vấn Role-play" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/company-tour-05.jpg" alt="Sinh viên nhập vai Nhà tuyển dụng" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/company-tour-06.jpg" alt="Hướng dẫn phương pháp S.T.A.R" loading="lazy"></figure>
+            <figure class="slider-photo-card"><img src="assets/images/hutech/company-tour-07.jpg" alt="Tổng kết và trao Chứng nhận E-Certificate" loading="lazy"></figure>
+          </div>
+
+          <button class="gallery-arrow gallery-next partner-gallery-next" type="button" aria-label="Xem ảnh tiếp theo" aria-controls="partner-gallery-slider">→</button>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 04: ECOSYSTEM ARTICLES & MEDIA LINKS SECTION -->
+    <!-- SECTION 04: ECOSYSTEM ARTICLES SECTION (ROW-BASED LIST) -->
     <section class="section partner-articles-section" style="background: var(--paper);">
       <div class="shell">
         <header class="section-head">
           <div class="section-index"><strong>04</strong><span>MEDIA & BLOG ARTICLES</span></div>
           <div>
             <h2 class="section-title">Tin tức & Bài viết Truyền thông</h2>
-            <p class="section-lead">Bài viết tin tức chính thức đưa tin về chương trình hợp tác từ hệ thống trang tin HR1Vietnam, HR1Jobs và HR1Tech.</p>
+            <p class="section-lead">Bài viết tin tức chính thức đưa tin về chương trình hợp tác từ hệ thống trang tin HR1Vietnam.</p>
           </div>
         </header>
 
-        <div class="articles-grid">
-          <!-- ARTICLE 1: HR1VIETNAM (RECAP ARTICLE 2025) -->
-          <article class="article-card" data-reveal>
-            <div class="article-badge hr1vietnam"><i class="fa-solid fa-globe"></i> HR1VIETNAM.COM</div>
-            <div class="article-image">
-              <img src="assets/images/hutech/ky-mou-02.jpg" alt="Tổng kết đào tạo tuyển dụng thực tế năm 2025">
+        <!-- SINGLE ROW ARTICLE LAYOUT -->
+        <div class="articles-list-wrap" data-reveal>
+          <article class="article-row-card">
+            <div class="article-row-image">
+              <span class="article-badge hr1vietnam"><i class="fa-solid fa-globe"></i> HR1VIETNAM.COM</span>
+              <img src="assets/images/hutech/ky-mou-02.jpg" alt="Tổng kết đào tạo tuyển dụng thực tế năm 2025: HR1 Vietnam Holdings & HUTECH" loading="lazy">
             </div>
-            <div class="article-content">
-              <span class="article-date"><i class="fa-regular fa-calendar"></i> Tin tức Chính thức · HR1Vietnam</span>
+            <div class="article-row-content">
+              <div class="article-meta-row">
+                <span class="article-date"><i class="fa-regular fa-calendar"></i> Tin tức Chính thức · HR1Vietnam</span>
+              </div>
               <h3>Tổng kết Đào tạo Tuyển dụng Thực tế tại Doanh nghiệp năm 2025: HR1 Vietnam Holdings & HUTECH</h3>
-              <p>Bài viết tổng kết chuỗi hoạt động trải nghiệm thực tế và đào tạo nghiệp vụ tuyển dụng cho hàng ngàn sinh viên HUTECH trong năm 2025.</p>
-              <a href="https://hr1vietnam.com/vi/news/tong-ket-dao-tao-tuyen-dung-thuc-te-tai-doanh-nghiep-nam-2025-hr1-vietnam-holdings-hutech-989.html" target="_blank" rel="noopener" class="article-link">Đọc bài viết trên HR1Vietnam ↗</a>
-            </div>
-          </article>
-
-          <!-- ARTICLE 2: HR1JOBS -->
-          <article class="article-card" data-reveal style="--delay: 150ms;">
-            <div class="article-badge hr1jobs"><i class="fa-solid fa-briefcase"></i> HR1JOBS.COM</div>
-            <div class="article-image">
-              <img src="assets/images/hutech/company-tour-05.jpg" alt="Sinh viên HUTECH nhập vai Nhà tuyển dụng">
-            </div>
-            <div class="article-content">
-              <span class="article-date"><i class="fa-regular fa-calendar"></i> Góc nhìn Thực tập · HR1Jobs</span>
-              <h3>Sinh Viên HUTECH Nhập Vai Nhà Tuyển Dụng Tại Trụ Sở HR1</h3>
-              <p>Góc nhìn tuyển dụng đa chiều giúp sinh viên hiểu rõ cách tối ưu CV và rèn luyện tư duy tự tin trước nhà tuyển dụng thực tế.</p>
-              <a href="https://hr1jobs.com/" target="_blank" rel="noopener" class="article-link">Đọc bài viết trên HR1Jobs ↗</a>
-            </div>
-          </article>
-
-          <!-- ARTICLE 3: HR1TECH -->
-          <article class="article-card" data-reveal style="--delay: 300ms;">
-            <div class="article-badge hr1tech"><i class="fa-solid fa-code"></i> HR1TECH.COM</div>
-            <div class="article-image">
-              <img src="assets/images/hutech/company-tour-03.webp" alt="Ứng dụng công nghệ AI cho sinh viên">
-            </div>
-            <div class="article-content">
-              <span class="article-date"><i class="fa-regular fa-calendar"></i> Công nghệ & Tuyển dụng · HR1Tech</span>
-              <h3>Ứng Dụng Công Nghệ & AI Trong Tập Huấn Kỹ Năng Nghề Nghiệp</h3>
-              <p>Khám phá cách HR1Tech hỗ trợ sinh viên các ngành công nghệ và kinh doanh rèn luyện công cụ AI để chuẩn bị hồ sơ ứng tuyển thời đại mới.</p>
-              <a href="https://hr1tech.com/" target="_blank" rel="noopener" class="article-link">Đọc bài viết trên HR1Tech ↗</a>
+              <p class="article-sapo">Bài viết tổng kết chuỗi hoạt động trải nghiệm thực tế và đào tạo nghiệp vụ tuyển dụng cho hàng ngàn sinh viên HUTECH trong năm 2025, giúp sinh viên trang bị góc nhìn nhà tuyển dụng và kỹ năng phỏng vấn chuyên nghiệp.</p>
+              <a href="https://hr1vietnam.com/vi/news/tong-ket-dao-tao-tuyen-dung-thuc-te-tai-doanh-nghiep-nam-2025-hr1-vietnam-holdings-hutech-989.html" target="_blank" rel="noopener" class="button secondary article-cta-btn">Đọc bài viết trên HR1Vietnam <span>↗</span></a>
             </div>
           </article>
         </div>
