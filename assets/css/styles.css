@@ -1063,6 +1063,10 @@ button{color:inherit}
   background: var(--white);
   border: 1px solid var(--line);
   overflow: hidden;
+  min-height: 220px;
+  aspect-ratio: 16/11;
+  display: flex;
+  flex-direction: column;
 }
 .photo-item img {
   width: 100%;

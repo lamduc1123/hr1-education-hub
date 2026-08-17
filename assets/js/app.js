@@ -33,6 +33,20 @@ const imageRevealObserver = new IntersectionObserver(entries => {
 }, {threshold:0, rootMargin:'0px 0px 200px 0px'});
 $$('.image-reveal').forEach(el => imageRevealObserver.observe(el));
 
+// Safety fallback for local file:// mode or Safari IntersectionObserver edge cases
+const revealAllOnScrollOrTimeout = () => {
+  $$('[data-reveal], .image-reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight + 300){
+      el.classList.add('visible');
+    }
+  });
+};
+addEventListener('scroll', revealAllOnScrollOrTimeout, {passive:true});
+addEventListener('load', revealAllOnScrollOrTimeout);
+setTimeout(revealAllOnScrollOrTimeout, 200);
+setTimeout(revealAllOnScrollOrTimeout, 600);
+
 const timeline = $('.documentary-timeline');
 if(timeline){
   const timelineObserver = new IntersectionObserver(([entry]) => {
