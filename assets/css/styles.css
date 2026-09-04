@@ -835,6 +835,15 @@ button{color:inherit}
 .about-meta-list strong {
   color: var(--ink);
 }
+.about-meta-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s var(--ease);
+}
+.about-meta-list a:hover {
+  color: var(--red);
+}
 .partner-card {
   background: var(--white);
   border: 1px solid var(--line);
