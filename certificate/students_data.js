@@ -10744,5 +10744,473 @@ window.INITIAL_STUDENTS_DATABASE = [
     "date": "30/07/2026",
     "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
     "certId": "HR1-HT-2026-2194"
+  },
+  {
+    "mssv": "24807600018",
+    "name": "Trần Nguyễn Bình Giang",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2195"
+  },
+  {
+    "mssv": "2387600035",
+    "name": "Phan Thị Cẩm Giang",
+    "class": "23DKQA2",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2196"
+  },
+  {
+    "mssv": "24802300070",
+    "name": "Lê Hà Giang",
+    "class": "24DMAB2",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2197"
+  },
+  {
+    "mssv": "24807600019",
+    "name": "Hoàng Thị Hằng",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2198"
+  },
+  {
+    "mssv": "2282300331",
+    "name": "Nguyễn Thị Quỳnh Hoa",
+    "class": "22DMAA4",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2199"
+  },
+  {
+    "mssv": "24807600154",
+    "name": "Bùi Thị Phương Linh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2200"
+  },
+  {
+    "mssv": "2281407724",
+    "name": "Trần Hoàng Bảo Minh",
+    "class": "22DQTC5",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2201"
+  },
+  {
+    "mssv": "2286100191",
+    "name": "Nguyễn Việt Mỹ",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2202"
+  },
+  {
+    "mssv": "24807600038",
+    "name": "Lê Trúc Na",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2203"
+  },
+  {
+    "mssv": "24807600040",
+    "name": "Lê Thị Ái Ngâu",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2204"
+  },
+  {
+    "mssv": "24802300286",
+    "name": "Nguyễn Trần Ngọc Phương",
+    "class": "24DMAB1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2205"
+  },
+  {
+    "mssv": "2282300937",
+    "name": "Nguyễn Phạm Phương Quyên",
+    "class": "22DMAA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2206"
+  },
+  {
+    "mssv": "24807600049",
+    "name": "Nguyễn Thị Tố Quyên",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2207"
+  },
+  {
+    "mssv": "24807600050",
+    "name": "Lê Thị Ngọc Quỳnh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2208"
+  },
+  {
+    "mssv": "24807602880",
+    "name": "Trần Thị Bích Tiền",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2209"
+  },
+  {
+    "mssv": "2186002036",
+    "name": "Nguyễn Thị An Thư",
+    "class": "21DNLA2",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2210"
+  },
+  {
+    "mssv": "24807600065",
+    "name": "Trịnh Thảo Uyên",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2211"
+  },
+  {
+    "mssv": "2388500702",
+    "name": "Phùng Quốc Vin",
+    "class": "23DLQB1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "13/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2212"
+  },
+  {
+    "mssv": "24807600003",
+    "name": "Huỳnh Nhật Anh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2213"
+  },
+  {
+    "mssv": "24807600007",
+    "name": "Võ Ngọc Phương Anh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2214"
+  },
+  {
+    "mssv": "24807600006",
+    "name": "Trịnh Tuấn Anh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2215"
+  },
+  {
+    "mssv": "24807600009",
+    "name": "Trần Thiện Ân",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2216"
+  },
+  {
+    "mssv": "24807600012",
+    "name": "Trương Thạnh Cường",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2217"
+  },
+  {
+    "mssv": "24807600015",
+    "name": "Nguyễn Thị Hoàng Duyên",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2218"
+  },
+  {
+    "mssv": "24807600021",
+    "name": "Võ Thị Thu Hiền",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2219"
+  },
+  {
+    "mssv": "24807600023",
+    "name": "Huỳnh Thị Diễm Hương",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2220"
+  },
+  {
+    "mssv": "24807600024",
+    "name": "Phạm Đình Diễm Hương",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2221"
+  },
+  {
+    "mssv": "24807600031",
+    "name": "Bùi Thị Xuân Liên",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2222"
+  },
+  {
+    "mssv": "24807603148",
+    "name": "Võ Hoàng Minh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2223"
+  },
+  {
+    "mssv": "24807600046",
+    "name": "Trần Thị Yến Nhi",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2224"
+  },
+  {
+    "mssv": "24807600060",
+    "name": "Huỳnh Đức Tính",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2225"
+  },
+  {
+    "mssv": "24807600053",
+    "name": "Nguyễn Quang Thái",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2226"
+  },
+  {
+    "mssv": "24807600059",
+    "name": "Nguyễn Huỳnh Ca Thy",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2227"
+  },
+  {
+    "mssv": "24807600061",
+    "name": "Nguyễn Thị Kiều Trang",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2228"
+  },
+  {
+    "mssv": "24807600064",
+    "name": "Nguyễn Văn Minh Trí",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2229"
+  },
+  {
+    "mssv": "24807600068",
+    "name": "Nguyễn Trương Vy",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "14/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2230"
+  },
+  {
+    "mssv": "24807600010",
+    "name": "Nguyễn Phương Châu",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2231"
+  },
+  {
+    "mssv": "24807600014",
+    "name": "Phùng Nhật Duy",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2232"
+  },
+  {
+    "mssv": "2388508471",
+    "name": "Nguyễn Thùy Dương",
+    "class": "23DLQB4",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2233"
+  },
+  {
+    "mssv": "24807600016",
+    "name": "Ngô Thùy Dương",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2234"
+  },
+  {
+    "mssv": "2281400192",
+    "name": "Giang Tấn Đạt",
+    "class": "22DQTB4",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2235"
+  },
+  {
+    "mssv": "2288508210",
+    "name": "Nguyễn Xuân Hòa",
+    "class": "22DLQC3",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2236"
+  },
+  {
+    "mssv": "24807600026",
+    "name": "Đặng Phương Khánh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2237"
+  },
+  {
+    "mssv": "24807600032",
+    "name": "Bùi Thị Thùy Linh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2238"
+  },
+  {
+    "mssv": "24807600035",
+    "name": "Bùi Trần Như Long",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2239"
+  },
+  {
+    "mssv": "2288500383",
+    "name": "Dương Phúc Lộc",
+    "class": "22DLQC3",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2240"
+  },
+  {
+    "mssv": "2387600087",
+    "name": "Võ Ngô Nhật Minh",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2241"
+  },
+  {
+    "mssv": "24807600039",
+    "name": "Chu Thị Kim Ngân",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2242"
+  },
+  {
+    "mssv": "2280602500",
+    "name": "Nguyễn Hữu Phước",
+    "class": "22DQTC2",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2243"
+  },
+  {
+    "mssv": "24807602881",
+    "name": "Võ Thị Thanh Tuyền",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2244"
+  },
+  {
+    "mssv": "24807600057",
+    "name": "Bùi Hoàng Minh Thư",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2245"
+  },
+  {
+    "mssv": "24801400303",
+    "name": "Lê Thị Minh Trang",
+    "class": "24DKQA1",
+    "faculty": "Quản trị & Du lịch HUTECH",
+    "date": "15/10/2026",
+    "topic": "Quy Trình Tuyển Dụng Thực Chiến & Phát Triển Năng Lực Nhân Sự Trong Doanh Nghiệp",
+    "certId": "HR1-HT-2026-2246"
   }
 ];
