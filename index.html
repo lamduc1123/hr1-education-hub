@@ -1647,9 +1647,34 @@
             <div class="field"><label>Hình thức quan tâm</label><select id="lead-interest"><option>Workshop / Webinar</option><option>Company Tour & Practical Training</option><option>Customized Learning Journey</option><option>Khác</option></select></div>
             <div class="field"><label>Số lượng sinh viên</label><select id="lead-students"><option>Dưới 50</option><option>50–100</option><option>100–300</option><option>Trên 300</option></select></div>
             <div class="field full"><label>Nội dung cần trao đổi</label><textarea id="lead-message" placeholder="Mục tiêu, thời gian dự kiến hoặc nhu cầu đào tạo"></textarea></div>
+
+            <!-- HONEYPOT ANTI-SPAM (Hidden from humans, traps automated bots) -->
+            <div class="hp-field" style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+              <label for="lead-website">Website (Để trống trường này)</label>
+              <input type="text" id="lead-website" name="company_website_trap" tabindex="-1" autocomplete="off">
+            </div>
           </div>
+
+          <!-- SMART SECURITY CAPTCHA -->
+          <div class="captcha-container" id="captcha-container">
+            <div class="captcha-header">
+              <label class="captcha-label" for="captcha-answer">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Xác thực an toàn (Chống Spam)</span>
+              </label>
+              <button type="button" class="captcha-refresh" id="btn-refresh-captcha" title="Đổi phép tính khác" aria-label="Đổi phép tính khác">
+                <i class="fa-solid fa-rotate-right"></i>
+              </button>
+            </div>
+            <div class="captcha-box">
+              <span class="captcha-equation" id="captcha-equation">7 + 5 = ?</span>
+              <input type="number" class="captcha-input" id="captcha-answer" placeholder="Nhập đáp án..." required autocomplete="off">
+            </div>
+            <div class="captcha-error" id="captcha-error"><i class="fa-solid fa-circle-exclamation"></i> <span>Kết quả xác thực chưa chính xác. Vui lòng thử lại.</span></div>
+          </div>
+
           <div class="form-actions"><button class="button primary" type="submit">Gửi yêu cầu hợp tác →</button><a class="button" href="assets/docs/Thu_Moi_Hop_Tac_HR1Vietnam.pdf" download>Thư Mời Hợp Tác</a></div>
-          <p class="form-note"><i class="fa-solid fa-circle-check"></i> Form đã được kết nối hệ thống tự động lưu trữ và gửi thông báo trực tuyến.</p>
+          <p class="form-note"><i class="fa-solid fa-shield-check"></i> Form được bảo vệ bởi tường lửa chống spam 3 lớp (Anti-Bot &amp; Honeypot Firewall).</p>
         </form>
         <details class="master-detail" style="grid-column:1/-1"><summary>Xem toàn bộ nội dung final của section</summary><div class="master-content"><h1>09. Final CTA &amp; Lead Form</h1>
 <h2>Eyebrow</h2>

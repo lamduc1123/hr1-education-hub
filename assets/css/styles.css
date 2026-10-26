@@ -279,6 +279,20 @@ button{color:inherit}
 .field textarea{min-height:120px;resize:vertical}
 .form-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .form-note{margin:13px 0 0;color:var(--muted);font-size:9px;line-height:1.6}
+.form-note i{color:#0E8345;margin-right:4px}
+.captcha-container{margin-top:14px;padding:14px 16px;background:var(--paper);border:1px dashed var(--line);display:flex;flex-direction:column;gap:10px}
+.captcha-header{display:flex;justify-content:space-between;align-items:center}
+.captcha-label{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.captcha-label i{color:var(--red);font-size:13px}
+.captcha-box{display:flex;align-items:center;gap:10px}
+.captcha-equation{display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;background:var(--ink);color:var(--white);font-family:var(--mono, monospace);font-size:16px;font-weight:700;letter-spacing:2px;user-select:none;border-radius:2px;min-width:110px}
+.captcha-refresh{background:var(--white);border:1px solid var(--line);width:38px;height:38px;cursor:pointer;color:var(--muted);transition:all .2s var(--ease);display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.captcha-refresh:hover{background:var(--ink);color:var(--white);border-color:var(--ink);transform:rotate(45deg)}
+.captcha-input{flex:1;min-height:44px;padding:10px 14px;border:1px solid var(--line);background:var(--white);color:var(--ink);font-size:14px;font-weight:600}
+.captcha-input:focus{outline:none;border-color:var(--ink);background:#fff}
+.captcha-input.error{border-color:var(--red);background:#FFF5F5}
+.captcha-error{font-size:11px;color:var(--red);font-weight:600;display:none;align-items:center;gap:6px}
+.captcha-error.show{display:flex}
 .form-success{display:none;margin-top:15px;padding:14px;background:#EAF7EE;color:#176B37;font-size:11px}
 .form-success.show{display:block}
 .footer{padding:48px 0 30px;background:#080C14;color:#fff}

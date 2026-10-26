@@ -210,6 +210,47 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxJnr2mpcXbzE
 const form = $('#partnership-form');
 const successModal = $('#lead-success-modal');
 
+// =========================================================================
+// ANTI-SPAM & SECURITY FIREWALL (HONEYPOT + TIMETRAP + SMART CAPTCHA + RATE LIMIT)
+// =========================================================================
+let currentCaptcha = 0;
+let formStartedTime = 0;
+
+// Hàm tạo phép tính xác thực ngẫu nhiên
+const generateCaptcha = () => {
+  const num1 = Math.floor(Math.random() * 9) + 3; // 3 - 11
+  const num2 = Math.floor(Math.random() * 8) + 2; // 2 - 9
+  currentCaptcha = num1 + num2;
+  
+  const eqEl = $('#captcha-equation');
+  if (eqEl) eqEl.textContent = `${num1} + ${num2} = ?`;
+  
+  const ansInput = $('#captcha-answer');
+  if (ansInput) {
+    ansInput.value = '';
+    ansInput.classList.remove('error');
+  }
+  
+  const errEl = $('#captcha-error');
+  if (errEl) errEl.classList.remove('show');
+};
+
+// Khởi chạy Captcha ban đầu
+if (form) {
+  generateCaptcha();
+  $('#btn-refresh-captcha')?.addEventListener('click', generateCaptcha);
+  
+  // Ghi nhận thời điểm người dùng bắt đầu thao tác (Time-trap chống bot siêu tốc)
+  form.querySelectorAll('input, select, textarea').forEach(inp => {
+    inp.addEventListener('focus', () => {
+      if (!formStartedTime) formStartedTime = Date.now();
+    }, { once: true });
+    inp.addEventListener('input', () => {
+      if (!formStartedTime) formStartedTime = Date.now();
+    }, { once: true });
+  });
+}
+
 // Hàm đóng/mở success modal
 const showSuccessModal = () => {
   successModal?.classList.add('open');
@@ -227,14 +268,72 @@ $('#close-success-modal')?.addEventListener('click', closeSuccessModal);
 $('#btn-success-close-ok')?.addEventListener('click', closeSuccessModal);
 successModal?.addEventListener('click', e => { if (e.target === successModal) closeSuccessModal(); });
 
-// Xử lý gửi Form
+// Xử lý gửi Form với tường lửa 4 lớp
 form?.addEventListener('submit', e => {
   e.preventDefault();
   
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalText = submitBtn.textContent;
+  const captchaErrorEl = $('#captcha-error');
+  const captchaInput = $('#captcha-answer');
+
+  // --- TẦNG 1: HONEYPOT CHECK (Bẫy bot ngầm) ---
+  const honeypotVal = $('#lead-website')?.value;
+  if (honeypotVal && honeypotVal.trim() !== '') {
+    console.warn('[Security] Automated Bot trapped via Honeypot.');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Đang kiểm tra bảo mật...';
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      showSuccessModal();
+      form.reset();
+      generateCaptcha();
+    }, 700);
+    return;
+  }
+
+  // --- TẦNG 2: TIME-TRAP CHECK (Gửi form dưới 2.5s -> Chặn bot gửi tự động) ---
+  const elapsed = formStartedTime ? (Date.now() - formStartedTime) : 0;
+  if (elapsed > 0 && elapsed < 2500) {
+    console.warn('[Security] Submission rejected: completed too fast (< 2.5s).');
+    submitBtn.disabled = true;
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      showSuccessModal();
+      form.reset();
+      generateCaptcha();
+    }, 600);
+    return;
+  }
+
+  // --- TẦNG 3: SMART CAPTCHA VERIFICATION ---
+  const userAnswer = parseInt(captchaInput?.value, 10);
+  if (isNaN(userAnswer) || userAnswer !== currentCaptcha) {
+    if (captchaErrorEl) {
+      captchaErrorEl.classList.add('show');
+    }
+    if (captchaInput) {
+      captchaInput.classList.add('error');
+      captchaInput.focus();
+    }
+    generateCaptcha();
+    return;
+  } else {
+    if (captchaErrorEl) captchaErrorEl.classList.remove('show');
+    if (captchaInput) captchaInput.classList.remove('error');
+  }
+
+  // --- TẦNG 4: CLIENT RATE LIMITING (Chống spam liên tục trong vòng 30s) ---
+  const lastSubmit = localStorage.getItem('hr1_lead_last_submit');
+  const now = Date.now();
+  if (lastSubmit && (now - parseInt(lastSubmit, 10)) < 30000) {
+    alert('Yêu cầu hợp tác của bạn vừa được tiếp nhận. Để tránh trùng lặp, vui lòng đợi 30 giây trước khi gửi yêu cầu tiếp theo.');
+    return;
+  }
   
-  // Thu thập dữ liệu
+  // Thu thập dữ liệu hợp lệ
   const formData = {
     fullname: $('#lead-fullname')?.value || '',
     organization: $('#lead-org')?.value || '',
@@ -242,7 +341,9 @@ form?.addEventListener('submit', e => {
     phone: $('#lead-phone')?.value || '',
     interest: $('#lead-interest')?.value || '',
     studentCount: $('#lead-students')?.value || '',
-    message: $('#lead-message')?.value || ''
+    message: $('#lead-message')?.value || '',
+    verifiedVia: 'Smart-Math-Captcha',
+    timestamp: new Date().toISOString()
   };
   
   // Nếu chưa cấu hình API URL thì chạy chế độ Thử nghiệm (Demo)
@@ -255,13 +356,16 @@ form?.addEventListener('submit', e => {
       submitBtn.textContent = originalText;
       showSuccessModal();
       form.reset();
+      formStartedTime = 0;
+      generateCaptcha();
+      localStorage.setItem('hr1_lead_last_submit', Date.now().toString());
     }, 1000);
     return;
   }
   
   // Trạng thái gửi
   submitBtn.disabled = true;
-  submitBtn.textContent = 'Đang gửi yêu cầu...';
+  submitBtn.textContent = 'Đang bảo mật & gửi yêu cầu...';
   
   // Gửi API đến Google Apps Script
   fetch(GOOGLE_SCRIPT_URL, {
@@ -277,6 +381,9 @@ form?.addEventListener('submit', e => {
     submitBtn.textContent = originalText;
     showSuccessModal();
     form.reset();
+    formStartedTime = 0;
+    generateCaptcha();
+    localStorage.setItem('hr1_lead_last_submit', Date.now().toString());
   })
   .catch(err => {
     console.error('Error submitting form:', err);
