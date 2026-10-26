@@ -291,8 +291,12 @@ button{color:inherit}
 .captcha-input{flex:1;min-height:44px;padding:10px 14px;border:1px solid var(--line);background:var(--white);color:var(--ink);font-size:14px;font-weight:600}
 .captcha-input:focus{outline:none;border-color:var(--ink);background:#fff}
 .captcha-input.error{border-color:var(--red);background:#FFF5F5}
-.captcha-error{font-size:11px;color:var(--red);font-weight:600;display:none;align-items:center;gap:6px}
+.captcha-input.shake{animation:captchaShake .35s ease-in-out}
+.captcha-error{font-size:11px;color:var(--red);font-weight:600;display:none;align-items:center;gap:7px;padding:7px 11px;background:#FFF2F0;border:1px solid rgba(177,17,22,0.18);border-left:3px solid var(--red);animation:captchaFadeIn .25s ease-out}
 .captcha-error.show{display:flex}
+.captcha-error i{font-size:12px;flex-shrink:0}
+@keyframes captchaShake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
+@keyframes captchaFadeIn{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
 .form-success{display:none;margin-top:15px;padding:14px;background:#EAF7EE;color:#176B37;font-size:11px}
 .form-success.show{display:block}
 .footer{padding:48px 0 30px;background:#080C14;color:#fff}
@@ -448,11 +452,6 @@ button{color:inherit}
   place-items: center;
   font-size: 32px;
   margin: 0 auto 22px;
-}
-.captcha-modal .modal-icon-circle.error {
-  background: #FFF1F0;
-  color: var(--red);
-  border: 1px solid rgba(177, 17, 22, 0.2);
 }
 .success-modal .modal-title {
   font-family: var(--serif);

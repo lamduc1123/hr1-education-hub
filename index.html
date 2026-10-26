@@ -1670,7 +1670,7 @@
               <span class="captcha-equation" id="captcha-equation">7 + 5 = ?</span>
               <input type="number" class="captcha-input" id="captcha-answer" placeholder="Nhập đáp án..." required autocomplete="off">
             </div>
-            <div class="captcha-error" id="captcha-error"><i class="fa-solid fa-circle-exclamation"></i> <span>Kết quả xác thực chưa chính xác. Vui lòng thử lại.</span></div>
+            <div class="captcha-error" id="captcha-error"><i class="fa-solid fa-circle-exclamation"></i> <span>Đáp án chưa chính xác. Đã đổi phép tính mới, vui lòng thử lại!</span></div>
           </div>
 
           <div class="form-actions"><button class="button primary" type="submit">Gửi yêu cầu hợp tác →</button><a class="button" href="assets/docs/Thu_Moi_Hop_Tac_HR1Vietnam.pdf" download>Thư Mời Hợp Tác</a></div>
@@ -1903,20 +1903,6 @@
         <p class="modal-desc">Cảm ơn Quý Đơn vị đã gửi yêu cầu hợp tác. Hệ thống đã ghi nhận thông tin đăng ký của bạn và tự động thông báo tới ban quản trị HR1Vietnam.</p>
         <p class="modal-sub">Chúng tôi sẽ phản hồi qua Email hoặc Số điện thoại/Zalo bạn cung cấp trong vòng 24 giờ làm việc.</p>
         <button class="button primary" id="btn-success-close-ok">Đồng ý</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- CAPTCHA ERROR POPUP MODAL -->
-  <div class="success-modal captcha-modal" id="captcha-error-modal" aria-hidden="true">
-    <div class="modal-dialog">
-      <button class="modal-close" id="close-captcha-modal" aria-label="Đóng thông báo">×</button>
-      <div class="modal-body text-center">
-        <div class="modal-icon-circle error"><i class="fa-solid fa-triangle-exclamation"></i></div>
-        <h2 class="modal-title">Xác thực chưa chính xác!</h2>
-        <p class="modal-desc">Kết quả phép tính bảo mật bạn vừa nhập chưa trùng khớp. Để đảm bảo an toàn, hệ thống đã tự động làm mới một câu hỏi xác thực khác.</p>
-        <p class="modal-sub">Vui lòng kiểm tra và nhập đáp án cho phép tính mới trước khi gửi lại yêu cầu.</p>
-        <button class="button primary" id="btn-captcha-close-ok">Thử lại ngay →</button>
       </div>
     </div>
   </div>

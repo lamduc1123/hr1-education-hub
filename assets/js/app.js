@@ -228,17 +228,23 @@ const generateCaptcha = () => {
   const ansInput = $('#captcha-answer');
   if (ansInput) {
     ansInput.value = '';
-    ansInput.classList.remove('error');
+    // Tự động ẩn thông báo lỗi và viền đỏ khi người dùng gõ lại đáp án mới
+    ansInput.oninput = () => {
+      ansInput.classList.remove('error');
+      $('#captcha-error')?.classList.remove('show');
+    };
   }
-  
-  const errEl = $('#captcha-error');
-  if (errEl) errEl.classList.remove('show');
 };
 
 // Khởi chạy Captcha ban đầu
 if (form) {
   generateCaptcha();
-  $('#btn-refresh-captcha')?.addEventListener('click', generateCaptcha);
+  $('#btn-refresh-captcha')?.addEventListener('click', () => {
+    generateCaptcha();
+    $('#captcha-error')?.classList.remove('show');
+    $('#captcha-answer')?.classList.remove('error');
+    $('#captcha-answer')?.focus();
+  });
   
   // Ghi nhận thời điểm người dùng bắt đầu thao tác (Time-trap chống bot siêu tốc)
   form.querySelectorAll('input, select, textarea').forEach(inp => {
@@ -267,33 +273,6 @@ const closeSuccessModal = () => {
 $('#close-success-modal')?.addEventListener('click', closeSuccessModal);
 $('#btn-success-close-ok')?.addEventListener('click', closeSuccessModal);
 successModal?.addEventListener('click', e => { if (e.target === successModal) closeSuccessModal(); });
-
-// MODAL THÔNG BÁO LỖI CAPTCHA
-const captchaModal = $('#captcha-error-modal');
-
-const showCaptchaModal = () => {
-  captchaModal?.classList.add('open');
-  captchaModal?.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-};
-const closeCaptchaModal = () => {
-  captchaModal?.classList.remove('open');
-  captchaModal?.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-  
-  // Tự động focus vào ô đáp án mới và đưa vào khung nhìn
-  setTimeout(() => {
-    const ansInput = $('#captcha-answer');
-    if (ansInput) {
-      ansInput.focus();
-      ansInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }, 100);
-};
-
-$('#close-captcha-modal')?.addEventListener('click', closeCaptchaModal);
-$('#btn-captcha-close-ok')?.addEventListener('click', closeCaptchaModal);
-captchaModal?.addEventListener('click', e => { if (e.target === captchaModal) closeCaptchaModal(); });
 
 // Xử lý gửi Form với tường lửa 4 lớp
 form?.addEventListener('submit', e => {
@@ -338,16 +317,18 @@ form?.addEventListener('submit', e => {
   // --- TẦNG 3: SMART CAPTCHA VERIFICATION ---
   const userAnswer = parseInt(captchaInput?.value, 10);
   if (isNaN(userAnswer) || userAnswer !== currentCaptcha) {
+    // Hiển thị dòng thông báo lỗi gọn gàng, tinh tế ngay sát ô nhập đáp án
     if (captchaErrorEl) {
       captchaErrorEl.classList.add('show');
     }
     if (captchaInput) {
       captchaInput.classList.add('error');
+      captchaInput.classList.add('shake');
+      setTimeout(() => captchaInput.classList.remove('shake'), 400);
+      captchaInput.focus();
     }
-    // Tự động làm mới câu hỏi ngẫu nhiên mới
+    // Tự động sinh phép tính ngẫu nhiên mới để người dùng trả lời lại
     generateCaptcha();
-    // Hiển thị popup thông báo lỗi cho người dùng
-    showCaptchaModal();
     return;
   } else {
     if (captchaErrorEl) captchaErrorEl.classList.remove('show');
