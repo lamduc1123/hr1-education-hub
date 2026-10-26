@@ -1907,6 +1907,20 @@
     </div>
   </div>
 
+  <!-- CAPTCHA ERROR POPUP MODAL -->
+  <div class="success-modal captcha-modal" id="captcha-error-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="close-captcha-modal" aria-label="Đóng thông báo">×</button>
+      <div class="modal-body text-center">
+        <div class="modal-icon-circle error"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h2 class="modal-title">Xác thực chưa chính xác!</h2>
+        <p class="modal-desc">Kết quả phép tính bảo mật bạn vừa nhập chưa trùng khớp. Để đảm bảo an toàn, hệ thống đã tự động làm mới một câu hỏi xác thực khác.</p>
+        <p class="modal-sub">Vui lòng kiểm tra và nhập đáp án cho phép tính mới trước khi gửi lại yêu cầu.</p>
+        <button class="button primary" id="btn-captcha-close-ok">Thử lại ngay →</button>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/app.js"></script>
 </body>
 </html>

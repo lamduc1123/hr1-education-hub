@@ -449,6 +449,11 @@ button{color:inherit}
   font-size: 32px;
   margin: 0 auto 22px;
 }
+.captcha-modal .modal-icon-circle.error {
+  background: #FFF1F0;
+  color: var(--red);
+  border: 1px solid rgba(177, 17, 22, 0.2);
+}
 .success-modal .modal-title {
   font-family: var(--serif);
   font-size: 29px;

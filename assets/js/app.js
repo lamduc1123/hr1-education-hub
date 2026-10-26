@@ -268,6 +268,33 @@ $('#close-success-modal')?.addEventListener('click', closeSuccessModal);
 $('#btn-success-close-ok')?.addEventListener('click', closeSuccessModal);
 successModal?.addEventListener('click', e => { if (e.target === successModal) closeSuccessModal(); });
 
+// MODAL THÔNG BÁO LỖI CAPTCHA
+const captchaModal = $('#captcha-error-modal');
+
+const showCaptchaModal = () => {
+  captchaModal?.classList.add('open');
+  captchaModal?.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+};
+const closeCaptchaModal = () => {
+  captchaModal?.classList.remove('open');
+  captchaModal?.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  
+  // Tự động focus vào ô đáp án mới và đưa vào khung nhìn
+  setTimeout(() => {
+    const ansInput = $('#captcha-answer');
+    if (ansInput) {
+      ansInput.focus();
+      ansInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, 100);
+};
+
+$('#close-captcha-modal')?.addEventListener('click', closeCaptchaModal);
+$('#btn-captcha-close-ok')?.addEventListener('click', closeCaptchaModal);
+captchaModal?.addEventListener('click', e => { if (e.target === captchaModal) closeCaptchaModal(); });
+
 // Xử lý gửi Form với tường lửa 4 lớp
 form?.addEventListener('submit', e => {
   e.preventDefault();
@@ -316,9 +343,11 @@ form?.addEventListener('submit', e => {
     }
     if (captchaInput) {
       captchaInput.classList.add('error');
-      captchaInput.focus();
     }
+    // Tự động làm mới câu hỏi ngẫu nhiên mới
     generateCaptcha();
+    // Hiển thị popup thông báo lỗi cho người dùng
+    showCaptchaModal();
     return;
   } else {
     if (captchaErrorEl) captchaErrorEl.classList.remove('show');
